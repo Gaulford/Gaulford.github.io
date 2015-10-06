@@ -1,0 +1,41 @@
+doctype
+html
+
+  head
+    include ./includes/head.jade
+
+  body.page-semestre.container
+    include ./includes/callback.jade
+
+    main
+
+      include ./includes/sidebar.jade
+
+      header.spotlight
+        div.overlay
+        div.main-title
+          span.logo
+          h1 Sobre o<br>
+            | Semestres
+
+      section.content
+        h1 Objetivo
+
+        h2 1º Semestre
+        p Ficou responsável pela criação do site institucional da empresa.
+
+        h2 2º Semestre
+        p Desenvolveu os sistemas de cadastro de produtos que seriam utilizados pelos funcionários da empresa.
+
+        h2 3º Semestre
+        p Criou o sistema de e-commerce, permitindo a venda dos produtos cadastrados no projeto do segundo semestre.
+
+        h2 4º Semestre
+        p Desenvolvimento de um app mobile que permitia a venda dos produtos pelo celular, através da leitura de QRCode em uma prateleira virtual, uma tendência de mercado.
+
+        h2 5º Semestre
+        p Criou um sistema de visualização de gráficos e relatórios analíticos, que seria utilizado pelos gestores da empresa.
+
+    script(src='js/lib/zepto.min.js')
+    script(src='js/lib/TweenMax.min.js')
+    script(src='js/application/main.js')

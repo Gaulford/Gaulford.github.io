@@ -1,0 +1,642 @@
+@import "http://fonts.googleapis.com/css?family=PT+Sans+Caption:400,700";
+/* line 5, ../../../../../../../../../../Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+/* line 22, ../../../../../../../../../../Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+html {
+  line-height: 1;
+}
+
+/* line 24, ../../../../../../../../../../Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 26, ../../../../../../../../../../Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 28, ../../../../../../../../../../Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+/* line 30, ../../../../../../../../../../Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+q, blockquote {
+  quotes: none;
+}
+/* line 103, ../../../../../../../../../../Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+/* line 32, ../../../../../../../../../../Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+a img {
+  border: none;
+}
+
+/* line 116, ../../../../../../../../../../Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block;
+}
+
+/* line 72, main/*.png */
+.main-sprite, .menu .logo a, .menu .link-curso .ico-curso, .item-1 .button-scroll .ico-arrow, .item-2 .ico-hippo, .container .main-title .logo, .page-outros .logo {
+  background-image: url('../assets/img/main-sc6a238acd1.png');
+  background-repeat: no-repeat;
+}
+
+/* line 23, ../../source/sass/main.scss */
+body {
+  font-family: "PT Sans Caption";
+  font-size: 16px;
+  font-size: 1rem;
+  color: #333333;
+  overflow: hidden;
+}
+
+/* line 30, ../../source/sass/main.scss */
+.loading {
+  background: transparent url('../assets/img/bg-red.png?1433279177') repeat scroll 0 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 20;
+  width: 100%;
+  height: 100%;
+}
+/* line 38, ../../source/sass/main.scss */
+.loading .wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -82.5px 0 0 -125px;
+  width: 250px;
+}
+/* line 45, ../../source/sass/main.scss */
+.loading img {
+  width: 130px;
+  margin: 0 auto;
+  display: block;
+}
+/* line 51, ../../source/sass/main.scss */
+.loading p {
+  margin-top: 15px;
+  font-size: 20px;
+  font-size: 1.25rem;
+  text-align: center;
+  color: #ffffff;
+}
+
+/* line 59, ../../source/sass/main.scss */
+.menu {
+  position: fixed;
+  top: 0;
+  right: -320px;
+  bottom: 0;
+  z-index: 10;
+  background-color: #ffffff;
+  min-width: 270px;
+  padding: 25px;
+  -moz-box-shadow: 0 0 50px #666666;
+  -webkit-box-shadow: 0 0 50px #666666;
+  box-shadow: 0 0 50px #666666;
+}
+/* line 68, ../../source/sass/main.scss */
+.menu .control-menu {
+  position: relative;
+}
+/* line 16, ../../source/sass/utils/_functions.scss */
+.menu .control-menu:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+/* line 73, ../../source/sass/main.scss */
+.menu .button-open,
+.menu .button-close {
+  position: absolute;
+  left: -92px;
+  width: 42px;
+  height: 30px;
+}
+/* line 80, ../../source/sass/main.scss */
+.menu .button-open a,
+.menu .button-close a {
+  display: block;
+  width: 42px;
+  height: 30px;
+}
+/* line 86, ../../source/sass/main.scss */
+.menu .button-open .top, .menu .button-open .middle, .menu .button-open .bottom,
+.menu .button-close .top,
+.menu .button-close .middle,
+.menu .button-close .bottom {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background-color: #ffffff;
+  -moz-box-shadow: 0 0 5px #999999;
+  -webkit-box-shadow: 0 0 5px #999999;
+  box-shadow: 0 0 5px #999999;
+}
+/* line 95, ../../source/sass/main.scss */
+.menu .button-open .middle,
+.menu .button-close .middle {
+  top: 50%;
+  margin-top: -2px;
+}
+/* line 101, ../../source/sass/main.scss */
+.menu .button-open .bottom,
+.menu .button-close .bottom {
+  top: auto;
+  bottom: 0;
+}
+/* line 108, ../../source/sass/main.scss */
+.menu .logo {
+  float: right;
+}
+/* line 111, ../../source/sass/main.scss */
+.menu .logo a {
+  display: block;
+  background-position: 0 -102px;
+  height: 71px;
+  width: 115px;
+}
+/* line 117, ../../source/sass/main.scss */
+.menu ul {
+  position: absolute;
+  top: 50%;
+  right: 25px;
+  margin-top: -175px;
+}
+/* line 123, ../../source/sass/main.scss */
+.menu li {
+  text-align: right;
+  margin-top: 35px;
+}
+/* line 127, ../../source/sass/main.scss */
+.menu li:first-child {
+  margin: 0;
+}
+/* line 132, ../../source/sass/main.scss */
+.menu li.active a {
+  padding-right: 10px;
+  border-right: solid 10px #bd0100;
+}
+/* line 138, ../../source/sass/main.scss */
+.menu li a {
+  padding-right: 10px;
+  border-right: solid 10px #bd0100;
+  font-size: 20px;
+  font-size: 1.25rem;
+  color: #505050;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+/* line 148, ../../source/sass/main.scss */
+.menu .link-curso {
+  overflow: hidden;
+  position: absolute;
+  bottom: 25px;
+  left: 50%;
+  margin-left: -32px;
+}
+/* line 154, ../../source/sass/main.scss */
+.menu .link-curso .ico-curso {
+  background-position: 0 -173px;
+  height: 23px;
+  width: 33px;
+  margin-right: 10px;
+  float: left;
+}
+/* line 160, ../../source/sass/main.scss */
+.menu .link-curso a {
+  font-weight: bold;
+  color: #505050;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+/* line 169, ../../source/sass/main.scss */
+.page-home {
+  overflow: hidden;
+}
+/* line 172, ../../source/sass/main.scss */
+.page-home main {
+  width: 100%;
+}
+/* line 176, ../../source/sass/main.scss */
+.page-home section {
+  width: 100%;
+}
+
+/* line 181, ../../source/sass/main.scss */
+.item-1 {
+  position: relative;
+  background: transparent url('../assets/img/bg-home-1.jpg?1433279177') center no-repeat;
+  background-size: cover;
+}
+/* line 186, ../../source/sass/main.scss */
+.item-1 .text-spotlight {
+  position: absolute;
+  top: -400px;
+  left: -150px;
+  width: 850px;
+  height: 850px;
+}
+/* line 192, ../../source/sass/main.scss */
+.item-1 .text-spotlight div {
+  opacity: 0.6;
+  background-color: #bd0100;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 5;
+  width: 100%;
+  height: 100%;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+}
+/* line 203, ../../source/sass/main.scss */
+.item-1 .text-spotlight h1 {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  z-index: 10;
+  width: 100%;
+  font-size: 35px;
+  font-size: 2.1875rem;
+  line-height: 70px;
+  text-align: center;
+  color: #ffffff;
+}
+/* line 215, ../../source/sass/main.scss */
+.item-1 .text-spotlight strong {
+  font-size: 45px;
+  font-size: 2.8125rem;
+  font-style: italic;
+  font-weight: 700;
+}
+/* line 222, ../../source/sass/main.scss */
+.item-1 .button-scroll {
+  margin-left: -97.5px;
+  position: absolute;
+  bottom: 50px;
+  left: 50%;
+  overflow: hidden;
+}
+/* line 228, ../../source/sass/main.scss */
+.item-1 .button-scroll .ico-arrow {
+  float: left;
+  margin: 15px 20px 15px 0;
+  background-position: 0 0;
+  height: 31px;
+  width: 65px;
+}
+/* line 234, ../../source/sass/main.scss */
+.item-1 .button-scroll a {
+  display: block;
+  font-size: 30px;
+  font-size: 1.875rem;
+  color: #ffffff;
+  line-height: 1;
+  text-transform: uppercase;
+  text-decoration: none;
+  text-shadow: 0 0 5px #666666;
+}
+/* line 244, ../../source/sass/main.scss */
+.item-1 .button-scroll span {
+  font-size: 15px;
+  font-size: 0.9375rem;
+}
+
+/* line 250, ../../source/sass/main.scss */
+.item-2 {
+  position: relative;
+  background: transparent url('../assets/img/bg-home-2.jpg?1433279177') center bottom no-repeat;
+  background-size: cover;
+  text-align: center;
+}
+/* line 256, ../../source/sass/main.scss */
+.item-2 .box-poligono {
+  background: transparent url('../assets/img/poligonal-box.png?1433279177') no-repeat scroll 0 0;
+  width: 632px;
+  height: 477px;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  margin-left: -316px;
+}
+/* line 265, ../../source/sass/main.scss */
+.item-2 h1 {
+  margin-top: 90px;
+  font-size: 30px;
+  font-size: 1.875rem;
+  color: #ffffff;
+  line-height: 55px;
+  text-align: center;
+}
+/* line 272, ../../source/sass/main.scss */
+.item-2 h1 strong {
+  font-weight: bold;
+  font-style: italic;
+}
+/* line 278, ../../source/sass/main.scss */
+.item-2 a {
+  display: inline-block;
+  margin-top: 35px;
+  font-size: 25px;
+  font-size: 1.5625rem;
+  color: #ffffff;
+  line-height: 1.4;
+  text-decoration: none;
+}
+/* line 287, ../../source/sass/main.scss */
+.item-2 .ico-hippo {
+  float: left;
+  margin-right: 10px;
+  background-position: 0 -31px;
+  height: 71px;
+  width: 115px;
+}
+/* line 293, ../../source/sass/main.scss */
+.item-2 .text {
+  display: inline-block;
+  padding-top: 25px;
+}
+
+/* line 299, ../../source/sass/main.scss */
+.container {
+  background: #ffffff url('../assets/img/bg-white.png?1433279177') center repeat;
+  overflow: auto;
+}
+/* line 303, ../../source/sass/main.scss */
+.container .spotlight {
+  width: 100%;
+  height: 350px;
+  position: relative;
+}
+/* line 309, ../../source/sass/main.scss */
+.container .overlay {
+  background-color: #000000;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 5;
+  width: 100%;
+  height: 100%;
+  opacity: 0.4;
+}
+/* line 319, ../../source/sass/main.scss */
+.container .main-title {
+  margin: -71px 0 0 -250px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 10;
+  width: 500px;
+  text-align: center;
+}
+/* line 327, ../../source/sass/main.scss */
+.container .main-title .logo {
+  display: block;
+  margin: 0 auto 15px;
+  background-position: 0 -31px;
+  height: 71px;
+  width: 115px;
+}
+/* line 333, ../../source/sass/main.scss */
+.container .main-title h1 {
+  display: inline-block;
+  padding-bottom: 15px;
+  border-bottom: solid 2px #ffffff;
+  font-size: 25px;
+  font-size: 1.5625rem;
+  font-weight: bold;
+  font-style: italic;
+  line-height: 1.4;
+  color: #ffffff;
+}
+/* line 345, ../../source/sass/main.scss */
+.container .content {
+  padding: 25px;
+}
+/* line 348, ../../source/sass/main.scss */
+.container .content h1 {
+  margin-bottom: 30px;
+  font-size: 35px;
+  font-size: 2.1875rem;
+  font-weight: bold;
+  font-style: italic;
+  color: #d82e2e;
+}
+/* line 356, ../../source/sass/main.scss */
+.container .content h2 {
+  margin-top: 20px;
+  font-size: 25px;
+  font-size: 1.5625rem;
+  color: #d82e2e;
+}
+/* line 362, ../../source/sass/main.scss */
+.container .content p, .container .content li {
+  margin-top: 15px;
+  font-size: 20px;
+  font-size: 1.25rem;
+  color: #333333;
+  line-height: 30px;
+}
+/* line 369, ../../source/sass/main.scss */
+.container .content strong {
+  font-weight: bold;
+  color: #d82e2e;
+}
+/* line 374, ../../source/sass/main.scss */
+.container .content ul {
+  margin-left: 40px;
+  list-style-type: disc;
+}
+
+/* line 382, ../../source/sass/main.scss */
+.page-empresa .spotlight {
+  background: #ffffff url('../assets/img/banner-empresa.png?1433279177') center no-repeat;
+  background-size: cover;
+}
+
+/* line 388, ../../source/sass/main.scss */
+.page-integrantes {
+  background: #bd0100 url('../assets/img/bg-red.png?1433279177') center repeat;
+}
+/* line 391, ../../source/sass/main.scss */
+.page-integrantes .spotlight {
+  background: #ffffff url('../assets/img/banner-integrantes.jpg?1433279177') center no-repeat;
+  background-size: cover;
+}
+/* line 396, ../../source/sass/main.scss */
+.page-integrantes .member {
+  float: left;
+  width: 30%;
+  margin-left: 5%;
+  text-align: center;
+}
+/* line 402, ../../source/sass/main.scss */
+.page-integrantes .member:first-child {
+  margin: 0;
+}
+/* line 406, ../../source/sass/main.scss */
+.page-integrantes .member ul {
+  margin: 0;
+  list-style: none;
+}
+/* line 411, ../../source/sass/main.scss */
+.page-integrantes .member .photo {
+  width: 185px;
+  height: 185px;
+  margin: 0 auto 40px;
+  background: transparent url('../assets/img/mark-photo.png?1433279177') 0 no-repeat;
+  background-size: cover;
+}
+/* line 418, ../../source/sass/main.scss */
+.page-integrantes .member .photo.um {
+  background: transparent url('../assets/img/member-1.png?1433279177') 0 no-repeat;
+}
+/* line 422, ../../source/sass/main.scss */
+.page-integrantes .member .photo.dois {
+  background: transparent url('../assets/img/member-2.png?1433279177') 0 no-repeat;
+}
+/* line 426, ../../source/sass/main.scss */
+.page-integrantes .member .photo.tres {
+  background: transparent url('../assets/img/member-3.png?1433279177') 0 no-repeat;
+}
+/* line 431, ../../source/sass/main.scss */
+.page-integrantes .member li {
+  font-size: 25px;
+  font-size: 1.5625rem;
+  color: #ffffff;
+  line-height: 30px;
+}
+
+/* line 440, ../../source/sass/main.scss */
+.page-projeto .spotlight {
+  background: #ffffff url('../assets/img/banner-projeto.jpg?1433279177') center no-repeat;
+  background-size: cover;
+}
+
+/* line 447, ../../source/sass/main.scss */
+.page-outros .content {
+  background: #ffffff url('../assets/img/banner-outros.jpg?1433279177') center no-repeat;
+  background-size: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+/* line 456, ../../source/sass/main.scss */
+.page-outros .overlay {
+  background-color: #000000;
+  opacity: 0.4;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 5;
+  width: 100%;
+  height: 100%;
+}
+/* line 466, ../../source/sass/main.scss */
+.page-outros .spotlight {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 10;
+  margin: -138px 0 0 -225px;
+  width: 450px;
+  text-align: center;
+}
+/* line 475, ../../source/sass/main.scss */
+.page-outros .logo {
+  display: block;
+  margin: 0 auto 30px;
+  background-position: 0 -31px;
+  height: 71px;
+  width: 115px;
+}
+/* line 481, ../../source/sass/main.scss */
+.page-outros h1 {
+  display: inline-block;
+  padding-bottom: 15px;
+  border-bottom: solid 2px #ffffff;
+  font-size: 35px;
+  font-size: 2.1875rem;
+  font-weight: bold;
+  font-style: italic;
+  line-height: 1.4;
+  color: #ffffff;
+}
+/* line 492, ../../source/sass/main.scss */
+.page-outros .view-more {
+  overflow: hidden;
+  margin-top: 35px;
+}
+/* line 497, ../../source/sass/main.scss */
+.page-outros p {
+  padding: 10px 50px 0 0;
+  float: right;
+  font-size: 20px;
+  font-size: 1.25rem;
+  line-height: 1.4;
+  color: #ffffff;
+}
+/* line 498, ../../source/sass/main.scss */
+.page-outros p:first-of-type {
+  float: left;
+  padding: 0 50px;
+}
+/* line 509, ../../source/sass/main.scss */
+.page-outros p a {
+  margin: 0 15px;
+  padding-left: 5px;
+  border-left: solid 10px #bd0100;
+  text-decoration: none;
+  color: #ffffff;
+}
+
+/* line 521, ../../source/sass/main.scss */
+.page-semestre .spotlight {
+  background: #ffffff url('../assets/img/banner-semestre.jpg?1433279177') center no-repeat;
+  background-size: cover;
+}
+
+/* line 528, ../../source/sass/main.scss */
+.page-qrcode .spotlight {
+  background: #ffffff url('../assets/img/bg-qrcode.jpg?1433279177') center no-repeat;
+  background-size: cover;
+}

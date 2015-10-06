@@ -1,0 +1,32 @@
+doctype
+html
+
+  head
+    include ./includes/head.jade
+
+  body.page-empresa.container
+    include ./includes/callback.jade
+
+    main
+
+      include ./includes/sidebar.jade
+
+      header.spotlight
+        div.overlay
+        div.main-title
+          span.logo
+          h1 Conheça a<br>
+            | HIPPO
+
+      section.content
+        h1 Empresa
+
+        p Oferecer tudo o que você precisa com mais economia. No hippo.com.br é assim. Você entra no site, escolhe o que quer e como quer pagar, e a Hippo entrega para você, rápido e fácil. Com os serviços de Entrega Rápida ou Entrega Agendada, você ainda pode escolher como e quando vai receber. Tudo isso em um ambiente virtual amigo e totalmente seguro onde você encontra tudo para você precisa para você e para toda sua família.
+
+        p <strong>Observação:</strong> É importante resaltar que se trata de uma empressa ficticia.
+
+
+
+    script(src='js/lib/zepto.min.js')
+    script(src='js/lib/TweenMax.min.js')
+    script(src='js/application/main.js')

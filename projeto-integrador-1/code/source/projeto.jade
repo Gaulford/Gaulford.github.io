@@ -1,0 +1,41 @@
+doctype
+html
+
+  head
+    include ./includes/head.jade
+
+  body.page-projeto.container
+    include ./includes/callback.jade
+
+    main
+
+      include ./includes/sidebar.jade
+
+      header.spotlight
+        div.overlay
+        div.main-title
+          span.logo
+          h1 O Projeto<br>
+            | HIPPO
+
+      section.content
+        h1 Projeto Integrador
+
+        p A disciplina denominada Projeto Integrador é uma prática comum nos cursos do Centro Universitário Senac, consiste em uma disciplina que visa integrar todos os conhecimentos e competências das demais disciplinas do curso.
+
+        p Foram "criadas" três empresas fictícias: Hippo supermercado, livraria Imaginario e a  loja de artigos Gandalf Geek Store. Os alunos ficaram encarregados de construir os softwares de cada empresa.
+
+        p As aplicações foram submetidas à loja de aplicativos da Google e serão convidados a instalar o app e efetuar compras fictícias nas lojas.
+
+        p Os principais fatores que foram pré-requisitos para a implantação da ideia foram:
+
+        ul
+          li Estimular os alunos a "abraçar" a ideia, e "vestir a camisa" da empresa fictícia do seu projeto. Despertar o sentimento de que estão fazendo parte de algo muito maior e de que são fundamentais para o sucesso.
+           
+          li Não criar em hipótese alguma uma dependência funcional entre os grupos. Apesar de conectados, todos os sistemas devem ser independentes, de forma que uma eventual desistência de um grupo não afete os demais.
+
+
+
+    script(src='js/lib/zepto.min.js')
+    script(src='js/lib/TweenMax.min.js')
+    script(src='js/application/main.js')

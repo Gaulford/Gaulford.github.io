@@ -1,0 +1,45 @@
+doctype
+html
+
+  head
+    include ./includes/head.jade
+
+  body.page-home-1
+    include ./includes/callback.jade
+
+    main
+      include ./includes/sidebar.jade
+
+      section.item-1
+        div.text-spotlight
+          div
+          h1
+            | Quando a gente é pequeno<br>
+            strong o tempo é grande.<br>
+            | Quando a gente é grande<br>
+            strong o tempo é pequeno.
+        
+        div.button-scroll
+          a(href="#",title="Scrole para ver mais")
+            span.ico-arrow
+            | Scrole<br>
+            span para ver mais
+
+      section.item-2
+        div.box-poligono
+          h1 É por isso que a<br>
+            strong HIPPO<br>
+            | se preocupa em<br>
+            strong cuidar de suas compras<br>
+            | pra você
+
+          a(href="empresa.html", title="Saiba mais")
+            span.ico-hippo
+            span.text Saiba mais
+
+    script(src='js/lib/require.min.js')
+
+    script(src='js/lib/zepto.min.js')
+    script(src='js/lib/TweenMax.min.js')
+    script(src='js/lib/ScrollToPlugin.min.js')
+    script(src='js/application/main.js')
