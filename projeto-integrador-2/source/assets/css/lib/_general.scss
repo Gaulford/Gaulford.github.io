@@ -1,0 +1,137 @@
+body, html {	
+	@include reset-box-model();
+	@include user-select(none);
+	font-family: $font;
+	font-weight: bold;
+	 
+}
+
+body, html, input, a, div, section, article, h1, {
+	// font-family: ;
+}
+
+a {
+	// @include unstyled-link();
+}
+
+b, strong{
+	// font-family: ;
+}
+
+.clear {
+	clear: both;
+}
+
+#wrapper {
+	@include center-x; 
+	max-width: $max-width+px;
+	overflow: hidden;
+	clear: both;
+
+
+}
+
+.center-y {
+	@include center-y();
+}
+
+.center-x {
+	@include center-x();	
+}
+
+.center {
+	@include center();
+}
+
+.hide {
+	display: none !important;
+}
+
+.show {
+	display: block !important;
+}
+
+
+.cursor-pointer {
+	cursor: pointer;
+}
+
+.cursor-default {
+	cursor: default;
+}
+
+.float-left {
+	@include float(left);
+}
+
+.float-right {
+	@include float(right);
+}
+
+.relative {
+	position: relative !important;
+}
+
+.overflow-hidden {
+	overflow: hidden !important;
+}
+
+.text-underline {
+	text-decoration: underline;
+}
+
+.inline-block {
+	display: inline-block !important;
+}
+
+.block {
+	display: block !important;
+}
+
+.txt-center {
+	text-align: center !important;
+}
+
+
+.hover-opacity {
+	opacity: 1;
+	@include transition(opacity 0.1s 0s $ease-in);
+	-webkit-backface-visibility: hidden;
+
+	&:hover {
+		opacity: 0.65 !important;
+	}
+}
+
+.hover-opacity-noanimate {
+	opacity: 1;
+
+	
+	&:hover {
+		@include transition(0 0s);
+		opacity: 0.65 !important;
+	}
+}
+
+
+.hover-underline, .hover-underline > * {
+	text-decoration: none;
+
+	&:hover {
+		text-decoration: underline;
+	}
+}
+
+
+.hover-highlight {
+
+	background: transparent;
+	@include transition(background 0.1s 0s $ease-in);
+
+	&:hover {
+		background: rgba(0,0,0,0.2) !important;
+	}
+}
+
+
+

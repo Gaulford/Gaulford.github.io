@@ -1,0 +1,145 @@
+@mixin set-size($w, $h) {
+	width: $w;
+    height: $h;
+}
+
+@mixin center-x() {
+	margin: 0 auto 0 auto;
+}
+
+@mixin center-y($position: relative) {
+	position: $position;
+	top: 50%;
+	@include transform(translateY(-50%));
+}
+
+@mixin center($position: relative) {
+	position: $position;
+	left: 50%;
+ 	top: 50%;
+  	@include transform(translateX(-50%) translateY(-50%));
+}
+
+@mixin no-antialias() {
+	font-smooth: never;
+	-webkit-font-smoothing: none;
+}
+
+@mixin input-placeholder {
+    &.placeholder { @content; }
+    &:-moz-placeholder { @content; }
+    &::-moz-placeholder { @content; }
+    &:-ms-input-placeholder { @content; }
+    &::-webkit-input-placeholder { @content; } 
+}
+
+@mixin font-size($target) {
+  $em: ($target / 16);
+  font-size: #{$target}px;
+  font-size: #{$em}em;
+}
+
+@mixin font-scale($minW, $maxW, $minFont, $maxFont) {
+  font-size: #{$minFont}px;
+ 
+  @media (min-width: #{$minW}px) and (max-width: #{$maxW}px){
+    font-size: calc(#{$minFont}px + (#{$maxFont} - #{$minFont}) * ( (100vw - #{$minW}px) / ( #{$maxW} - #{$minW})));
+  }
+  @media (min-width: #{$maxW}px){
+    font-size: #{$maxFont}px;
+  }
+}
+
+@mixin scrollbar($size, $primary, $secondary: lighten($primary, 25%), $url-track: "") {	
+
+    ::-webkit-scrollbar {
+        width:  $size;
+        height: $size;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: $primary;
+        cursor: pointer;
+        
+        @if $url-track != "" {
+        	// background: url($url-track) no-repeat;        	
+        	// background-size: 100% 100%;
+        }
+    }
+
+    ::-webkit-scrollbar-track {
+        background: $secondary;
+    }
+
+    body {
+        scrollbar-face-color: $primary;
+        scrollbar-track-color: $secondary;
+    }
+}
+
+@mixin bg-color($color: $blue-two){
+	background: $color;	
+}
+
+@mixin set-border($thickness: 2px, $color: $blue-two, $type: solid){
+	border: $thickness $color $type;
+}
+
+@mixin maxWidth($w) {
+	@media screen and (max-width: $w + px) {
+		@content;
+	}
+}
+@mixin minWidth($w) {
+	@media screen and (min-width: $w + px) {
+		@content;
+	}
+}
+
+@mixin maxHeight($h) {
+	@media screen and (max-height: $h + px) {
+		@content;
+	}
+}
+@mixin minHeight($h) {
+	@media screen and (min-height: $h + px) {
+		@content;
+	}
+}
+
+@mixin apply-font($name: robotoregular, $size: 1rem) {	
+	font-family: $name;
+	font-size: $size;
+}
+
+@mixin mobile-pixelRatio() {
+	@media only screen 
+		and (min-device-width : 320px) 
+		and (max-device-width : 480px) 
+		and (-webkit-min-device-pixel-ratio: 2),
+		only screen and (-webkit-min-device-pixel-ratio: 1.3) and (max-device-width : 1195px),
+		only screen and (-o-min-device-pixel-ratio: 13/10) and (max-device-width : 1195px),
+		only screen and (min-resolution: 120dpi) and (max-device-width : 1195px),
+		only screen and (min--moz-device-pixel-ratio: 2) and (max-device-width : 1195px),
+		only screen and (-o-min-device-pixel-ratio: 2/1) and (max-device-width : 1195px),
+		only screen and (-device-pixel-ratio: 2) and (max-device-width : 1195px),
+		only screen and (min-resolution: 192dpi) and (max-device-width : 1195px),
+		only screen and ( min-resolution: 2dppx) and (max-device-width : 1195px)
+	 { 
+		@content;
+	}
+}
+
+@mixin mobile-portrait() {
+	@media screen and (orientation:portrait)
+	{	
+		@content; 
+	}
+}
+
+@mixin mobile-landscape() {
+	@media screen and (orientation:landscape)
+	{	
+		@content; 
+	}
+}

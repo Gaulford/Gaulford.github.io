@@ -1,0 +1,26 @@
+{
+  "name": "Generic_dynamic_PHP_task_runner",
+  "version": "1.0.0",
+  "description": "Task runner to optimize PHP websites development.",
+  "main": "Gulpfile.js",
+  "dependencies": {},
+  "devDependencies": {
+    "browser-sync": "*",
+    "del": "*",
+    "gulp": "*",
+    "gulp-connect-php": "*",
+    "gulp-changed": "*",
+    "gulp-htmlmin": "*",
+    "gulp-imagemin": "*",
+    "gulp-notify": "*",
+    "gulp-plumber": "*",
+    "gulp-uncss": "*",
+    "gulp-ftp": "*",
+    "gulp-sftp": "*",
+    "gulp-uglify": "*",
+    "gulp-coffee": "*",
+    "gulp-compass": "*",
+    "gulp-include": "*",
+    "gulp-csso": "*"
+  }
+}

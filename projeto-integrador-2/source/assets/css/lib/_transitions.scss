@@ -1,0 +1,45 @@
+.show-alpha-in{
+	@include animation(alphaIn 0.1s 0.1s $ease-in backwards);
+}
+
+.hide-alpha-out{
+	@include animation(alphaOut 0.2s 0.2s $ease-out forwards);
+}
+
+.slide-left{
+	@include animation(slideLeft 0.3s 0s $ease-in forwards);
+}
+
+.slide-right{
+	@include animation(slideRight 0.3s 0s $ease-out forwards);
+}
+
+@include keyframes(alphaIn){	
+	to{
+		opacity: 1;
+	}
+}
+
+@include keyframes(alphaOut){
+	to{
+		opacity: 0;
+	}	
+}
+
+@include keyframes(slideLeft){
+	0%{
+		left: 0%;
+	}
+	100%{
+		left: -100%;
+	}
+}
+
+@include keyframes(slideRight){
+	0%{
+		left: -100%;
+	}
+	100%{
+		left: 0%;
+	}
+}

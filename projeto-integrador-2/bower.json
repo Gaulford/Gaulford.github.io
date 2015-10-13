@@ -1,0 +1,23 @@
+{
+  "name": "Generic_dynamic_PHP_task_runner",
+  "version": "1.0.0",
+  "authors": [
+    "Gaulford <william.ma.ro@gmail.com>"
+  ],
+  "description": "Libraries to optimize PHP websites development.",
+  "main": "main",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    ".sass-cache",
+    "node_modules",
+    "bower_components"
+  ],
+  "private": true,
+  "dependencies": {
+    "jquery": "1.11.3"
+  },
+  "install" : {
+    "path"  : "source/assets/js/lib"
+  }
+}
