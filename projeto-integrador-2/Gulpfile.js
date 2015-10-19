@@ -27,11 +27,15 @@
     },
     hml: {
       root: "hml/",
-      css: "hml/assets/css/"
+      css: "hml/assets/css/",
+      font: "hml/assets/font/",
+      image: "hml/assets/img/"
     },
     prod: {
       root: "prod/",
-      css: "prod/assets/css/"
+      css: "prod/assets/css/",
+      font: "prod/assets/font/",
+      image: "prod/assets/img/"
     }
   };
   ftp = {
@@ -46,7 +50,7 @@
   };
   gulp.task("up-server", function() {
     connect.server({
-      base: "./" + paths.source.root,
+      base: "./" + paths.hml.root,
       hostname: "localhost",
       port: 3000,
       bin: "C:/xampp/php/php.exe",
@@ -63,7 +67,7 @@
     gulp.watch(paths.source.root + "**/*.coffee", ["coffeescript"]).on("change", browserSync.reload);
     gulp.watch(paths.source.root + "**/*.js", ["javascript"]).on("change", browserSync.reload);
     gulp.watch([paths.source.root + "**/*.jpg", paths.source.root + "**/*.gif", paths.source.root + "**/*.png"], ["images"]).on("change", browserSync.reload);
-    gulp.watch([paths.source.root + "**/*.eot", paths.source.root + "**/*.svg", paths.source.root + "**/*.ttf", paths.source.root + "**/*.woff"], ["fonts"]).on("change", browserSync.reload);
+    gulp.watch([paths.source.root + "**/*.eot", paths.source.root + "**/*.svg", paths.source.root + "**/*.ttf", paths.source.root + "**/*.woff", paths.source.root + "**/*.woff2"], ["fonts"]).on("change", browserSync.reload);
   });
   gulp.task("php-files", function() {
     gulp.src("./" + paths.source.root + "**/*.php", {
@@ -84,11 +88,11 @@
       hasChanged: changed.compareSha1Digest
     })).pipe(compass({
       style: "expanded",
-      sass: "./" + paths.source.css,
-      css: "./" + paths.hml.css,
-      javascript: "./{paths.source.js}",
-      font: "./" + paths.source.font,
-      image: "./" + paths.source.image,
+      sass: "" + paths.source.css,
+      css: "" + paths.hml.css,
+      javascript: "{paths.hml.js}",
+      font: "" + paths.hml.font,
+      image: "" + paths.source.image,
       comments: true,
       logging: true,
       time: true
@@ -127,7 +131,7 @@
     })).pipe(gulp.dest(paths.hml.root)).pipe(browserSync.stream());
   });
   gulp.task("fonts", function() {
-    gulp.src("./" + paths.source.root + "{**/*.{eot,svg,ttf,woff},*.{eot,svg,ttf,woff}}", {
+    gulp.src("./" + paths.source.root + "{**/*.{eot,svg,ttf,woff,woff2},*.{eot,svg,ttf,woff,woff2}}", {
       base: "./" + paths.source.root
     }).pipe(plumber({
       errorHandler: notify.onError("Erro ao transportar as fontes de SOURCE para HML: <%= error.message %>")
@@ -154,11 +158,11 @@
       errorHandler: notify.onError("Erro ao otimizar o SCSS: <%= error.message %>")
     })).pipe(compass({
       style: "compressed",
-      sass: "./" + paths.source.css,
-      css: "./" + paths.prod.css,
-      javascript: "./{paths.source.js}",
-      font: "./" + paths.source.font,
-      image: "./" + paths.source.image,
+      sass: "" + paths.source.css,
+      css: "" + paths.prod.css,
+      javascript: "{paths.prod.js}",
+      font: "" + paths.prod.font,
+      image: "" + paths.source.image,
       comments: false,
       logging: false,
       time: false
@@ -199,7 +203,7 @@
     })).pipe(gulp.dest(paths.prod.root));
   });
   gulp.task("optmize-fonts", ["clean-hml-and-prod"], function() {
-    gulp.src("./" + paths.source.root.font + "{**/*.{eot,svg,ttf,woff},*.{eot,svg,ttf,woff}}", {
+    gulp.src("./" + paths.source.root.font + "{**/*.{eot,svg,ttf,woff,woff2},*.{eot,svg,ttf,woff,woff2}}", {
       base: "./" + paths.source.root
     }).pipe(plumber({
       errorHandler: notify.onError("Erro ao otimizar as fontes: <%= error.message %>")

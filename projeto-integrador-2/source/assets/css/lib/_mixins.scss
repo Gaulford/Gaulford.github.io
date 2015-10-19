@@ -34,9 +34,9 @@
 }
 
 @mixin font-size($target) {
-  $em: ($target / 16);
+  $rem: ($target / 16);
   font-size: #{$target}px;
-  font-size: #{$em}em;
+  font-size: #{$rem}rem;
 }
 
 @mixin font-scale($minW, $maxW, $minFont, $maxFont) {

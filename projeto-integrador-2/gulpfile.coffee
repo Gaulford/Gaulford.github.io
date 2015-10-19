@@ -29,9 +29,13 @@ do ->
 		hml:
 			root: "hml/"
 			css: "hml/assets/css/"
+			font: "hml/assets/font/"
+			image: "hml/assets/img/"
 		prod:
 			root: "prod/"
 			css: "prod/assets/css/"
+			font: "prod/assets/font/"
+			image: "prod/assets/img/"
 
 	# Decode password to conect to paixaoporvoareservir.com.br sftp
 	# Build settings to publish content in server
@@ -47,7 +51,7 @@ do ->
 	# Start server with php
 	gulp.task "up-server", ->
 		connect.server 
-			base: "./#{paths.source.root}"
+			base: "./#{paths.hml.root}"
 			hostname: "localhost"
 			port: 3000
 			bin: "C:/xampp/php/php.exe"
@@ -67,9 +71,19 @@ do ->
 		.on "change", browserSync.reload
 		gulp.watch "#{paths.source.root}**/*.js", ["javascript"]
 		.on "change", browserSync.reload
-		gulp.watch ["#{paths.source.root}**/*.jpg","#{paths.source.root}**/*.gif","#{paths.source.root}**/*.png"], ["images"]
+		gulp.watch [
+			"#{paths.source.root}**/*.jpg"
+			"#{paths.source.root}**/*.gif"
+			"#{paths.source.root}**/*.png"
+		], ["images"]
 		.on "change", browserSync.reload
-		gulp.watch ["#{paths.source.root}**/*.eot","#{paths.source.root}**/*.svg","#{paths.source.root}**/*.ttf","#{paths.source.root}**/*.woff"], ["fonts"]
+		gulp.watch [
+			"#{paths.source.root}**/*.eot"
+			"#{paths.source.root}**/*.svg"
+			"#{paths.source.root}**/*.ttf"
+			"#{paths.source.root}**/*.woff"
+			"#{paths.source.root}**/*.woff2"
+		], ["fonts"]
 		.on "change", browserSync.reload
 		return
 
@@ -94,11 +108,11 @@ do ->
 			hasChanged: changed.compareSha1Digest
 		.pipe compass
 			style: "expanded"
-			sass: "./#{paths.source.css}"
-			css: "./#{paths.hml.css}"
-			javascript: "./{paths.source.js}"
-			font: "./#{paths.source.font}"
-			image: "./#{paths.source.image}"
+			sass: "#{paths.source.css}"
+			css: "#{paths.hml.css}"
+			javascript: "{paths.hml.js}"
+			font: "#{paths.hml.font}"
+			image: "#{paths.source.image}"
 			comments: true
 			logging: true
 			time: true
@@ -148,7 +162,7 @@ do ->
 
 	# Move fonts to homologation environment
 	gulp.task "fonts", ->
-		gulp.src "./#{paths.source.root}{**/*.{eot,svg,ttf,woff},*.{eot,svg,ttf,woff}}", base: "./#{paths.source.root}"
+		gulp.src "./#{paths.source.root}{**/*.{eot,svg,ttf,woff,woff2},*.{eot,svg,ttf,woff,woff2}}", base: "./#{paths.source.root}"
 		.pipe plumber
 			errorHandler: notify.onError "Erro ao transportar as fontes de SOURCE para HML: <%= error.message %>"
 		.pipe changed "./#{paths.hml.root}",
@@ -182,11 +196,11 @@ do ->
 			errorHandler: notify.onError "Erro ao otimizar o SCSS: <%= error.message %>"
 		.pipe compass
 			style: "compressed"
-			sass: "./#{paths.source.css}"
-			css: "./#{paths.prod.css}"
-			javascript: "./{paths.source.js}"
-			font: "./#{paths.source.font}"
-			image: "./#{paths.source.image}"
+			sass: "#{paths.source.css}"
+			css: "#{paths.prod.css}"
+			javascript: "{paths.prod.js}"
+			font: "#{paths.prod.font}"
+			image: "#{paths.source.image}"
 			comments: false
 			logging: false
 			time: false
@@ -233,7 +247,7 @@ do ->
 
 	# Build font optmizer task
 	gulp.task "optmize-fonts", ["clean-hml-and-prod"], ->
-		gulp.src "./#{paths.source.root.font}{**/*.{eot,svg,ttf,woff},*.{eot,svg,ttf,woff}}", base: "./#{paths.source.root}"
+		gulp.src "./#{paths.source.root.font}{**/*.{eot,svg,ttf,woff,woff2},*.{eot,svg,ttf,woff,woff2}}", base: "./#{paths.source.root}"
 		.pipe plumber
 			errorHandler: notify.onError "Erro ao otimizar as fontes: <%= error.message %>"
 		.pipe gulp.dest paths.prod.root
