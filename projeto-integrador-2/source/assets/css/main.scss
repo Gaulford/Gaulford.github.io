@@ -61,7 +61,111 @@ body
 
 .cmp-access
 {
-	
+	width: 20%;
+	float: left;
+	background-color: $azulEscuro;
+
+	h2
+	{
+		padding: 20px;
+		@include font-size(11);
+		font-weight: bold;
+		text-transform: uppercase;
+		color: $azulClaro;
+	}
+
+	li
+	{
+		a
+		{
+			display: block;
+			overflow: hidden;
+			padding: 15px 20px;
+			@include transition(all 0.1s ease-in-out);
+			@include font-size(13);
+			font-weight: bold;
+			color: $cinza;
+			text-decoration: none;
+
+			&:hover
+			{
+				background-color: $azul;
+				color: $branco;
+			}
+		}
+
+		.fa
+		{
+			margin-right: 15px;
+			float: left;
+		}
+
+		.fa-angle-right
+		{
+			margin: 0;
+			float: right;
+		}
+	}
+}
+
+.cmp-content
+{
+	width: 80%;
+	position: relative;
+	float: left;
+}
+
+.cmp-container
+{
+	width: 100%;
+	overflow: hidden;
+}
+
+.mod-user-logged
+{
+	overflow: hidden;
+	padding: 20px;
+
+	.user-photo
+	{
+		float: left;
+		overflow: hidden;
+		@include border-radius(100%);
+	}
+
+	.user-infos
+	{
+		float: left;
+		margin: 0 20px;
+		max-width: 155px;
+
+		h1
+		{
+			@include font-size(16);
+			font-weight: bold;
+			color: $cinza;
+			line-height: 1.7;
+		}
+
+		p
+		{
+			@include font-size(13);
+			color: $cinza;
+			line-height: 1.7;
+		}
+
+		i
+		{
+			margin-right: 10px;
+		}
+	}
+
+	.btn-sair
+	{
+		line-height: 3;
+		float: right;
+		color: $branco;
+	}
 }
 
 .cmp-breadcrumbs
