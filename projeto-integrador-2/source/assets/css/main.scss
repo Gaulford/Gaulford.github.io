@@ -12,7 +12,7 @@
 @import "lib/animation";
 // @import "lib/_transitions";
 @import "lib/mixins";
-// @import "lib/_grid";
+@import "lib/_grid";
 @import "lib/functions";
 @import "lib/fonts";
 @import "lib/colors";
@@ -26,6 +26,7 @@
 body
 {
 	font-family: $font;
+	@include font-size(16);
 }
 
 .page-login
@@ -61,7 +62,7 @@ body
 
 .cmp-access
 {
-	width: 20%;
+	width: 300px;
 	float: left;
 	background-color: $azulEscuro;
 
@@ -113,6 +114,17 @@ body
 	width: 80%;
 	position: relative;
 	float: left;
+	background-color: $cinza;
+}
+
+.cmp-box-space
+{
+	margin: 20px 20px 50px;
+	padding: 20px;
+	overflow: hidden;
+	background-color: $branco;
+	@include border-radius(3px);
+	border: solid 1px $cinzaEscuro;
 }
 
 .cmp-container
@@ -230,6 +242,58 @@ body
 	padding: 15px 20px;
 }
 
+.pages-manage-data
+{
+	.cmp-content
+	{
+		h1,
+		h2
+		{
+			margin-bottom: 30px;
+			@include font-size(20);
+			color: $cinzaPreto;
+		}
+
+		h2
+		{
+			margin: 10px 0 0;
+			@include font-size(15);
+		}
+	}
+
+	.mod-btn
+	{
+		padding: 15px 20px;
+		@include font-size(15);
+	}
+
+	.mod-input
+	{
+		margin: 0 0 15px;
+
+		textarea
+		{
+			min-height: 181px;
+			font-size: 13px;
+		}
+	}
+
+	.mod-input-mark
+	{
+		margin: 10px 0 15px;
+	}
+
+	.col-48
+	{
+		margin-left: 3.8%;
+
+		&:first-child
+		{
+			margin-left: 0;
+		}
+	}
+}
+
 .cmp-login
 {
 	width: 278px;
@@ -299,14 +363,38 @@ body
 	padding: 10px;
 	border: solid 1px $cinzaEscuro;
 	@include border-radius(3px);
-	@include font-size(13);
-	color: $preto;
+
+	input,
+	textarea,
+	select,
+	{
+		width: 100%;
+		border: none;
+		outline: none;
+		@include font-size(13);
+		color: $preto;
+	}
+}
+
+.mod-input-mark
+{
+	input
+	{
+		margin-right: 15px;
+	}
+
+	label
+	{
+		@include font-size(15);
+		color: $cinzaPreto;
+	}
 }
 
 .mod-btn
 {
 	background-color: $amarelo;
 	@include border-radius(3px);
+	cursor: pointer;
 	border: none;
 	@include font-size(13);
 	color: $branco;

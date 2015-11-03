@@ -1,4 +1,5 @@
 .grid {
+  overflow: hidden;
   
   &:after {
     content: "";
@@ -23,6 +24,10 @@
 
 .col-40 {
 	width: 40%;
+}
+
+.col-48 {
+  width: 48%;
 }
 
 .col-50 {

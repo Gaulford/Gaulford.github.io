@@ -2,18 +2,7 @@
 <!--[if IE 8]>         <html class="lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!--> <html> <!--<![endif]-->
     <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-
-        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-
-        <link rel="stylesheet" href="assets/css/main.css">
-        <link rel="stylesheet" href="assets/css/modules/modules.css">
-        <link rel="stylesheet" href="assets/css/components/components.css">
-        <link rel="stylesheet" href="assets/css/pages/page-login.css">
+        <?php require_once("includes/head.php"); ?>
     </head>
     <body class="page-categoria">
         
@@ -54,15 +43,8 @@
             </form>
         </section>
 
-        <footer class="cmp-footer">
-            <details open="open">
-                <summary>
-                    © 2015 by <a href="#" title="William Magalhães Rodrigues">William Magalhães Rodrigues</a>.
-                </summary>
-            </details>
-        </footer>
+        <?php require_once("includes/footer.php"); ?>
 
-        <script src="assets/js/lib/jquery/jquery.js"></script>
-        <script src="assets/js/main.js"></script>
+        <?php require_once("includes/scripts.php"); ?>
     </body>
 </html>
