@@ -29,6 +29,31 @@ body
 	@include font-size(16);
 }
 
+.pages-list-data {
+	.cmp-box-space
+	{
+		overflow: hidden;
+	}
+
+	.mod-btn
+	{
+		float: right;
+		padding: 10px;
+		text-decoration: none;
+	}
+
+	.cmp-content
+	{
+		h1
+		{
+			float: left;
+			@include font-size(20);
+			color: $cinzaPreto;
+			line-height: 1.6;
+		}
+	}
+}
+
 .page-login
 {
 	background-color: $cinza;
@@ -111,7 +136,7 @@ body
 
 .cmp-content
 {
-	width: 80%;
+	width: 75%;
 	position: relative;
 	float: left;
 	background-color: $cinza;
@@ -125,6 +150,42 @@ body
 	background-color: $branco;
 	@include border-radius(3px);
 	border: solid 1px $cinzaEscuro;
+}
+
+.cmp-box-no-space
+{
+	@extend .cmp-box-space;
+	padding: 0;
+}
+
+.cmp-table-data
+{
+	width: 100%;
+
+	th
+	{
+		font-weight: bold;
+	}
+
+	td,
+	th
+	{
+		padding: 12px 20px;
+		@include font-size(13);
+		color: $preto;
+		text-align: center;
+
+		a
+		{
+			@include font-size(20);
+			color: $preto;
+		}
+	}
+
+	td
+	{
+		border-top: solid 1px $cinzaEscuro;
+	}
 }
 
 .cmp-container
