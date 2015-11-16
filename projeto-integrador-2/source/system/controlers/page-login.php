@@ -1,11 +1,14 @@
 <?php
 	require_once("/system/core/session-control.php");
 
+	// var_dump( hash( "sha256", "finalrwm98832247" ) );
+	// die();
+
 	if ( $_SERVER['REQUEST_METHOD'] === "POST" )
 	{
 		require_once("/system/core/connect.php");
 
-		$sqlQuery = "select loginUsuario, senhaUsuario from Usuario where loginUsuario = ?";
+		$sqlQuery = "select idUsuario, loginUsuario, senhaUsuario from Usuario where loginUsuario = ?";
 		$sqlInputs = array( $_POST["admin-username"] );
 		$sqlRun = sqlsrv_query( $onConnect, $sqlQuery, $sqlInputs );
 
@@ -22,14 +25,16 @@
 		else
 		{
 			$username = $_POST["admin-username"];
-			$password = md5( $_POST["admin-pass"] );
-			$dbUsername = sqlsrv_get_field( $sqlRun, 0 );
-			$dbPassword = sqlsrv_get_field( $sqlRun, 1 );
+			$password = hash( "sha256", $_POST["admin-pass"] );
+			$dbIdUser = sqlsrv_get_field( $sqlRun, 0 );
+			$dbUsername = sqlsrv_get_field( $sqlRun, 1 );
+			$dbPassword = sqlsrv_get_field( $sqlRun, 2 );
 
 			if ( $username === $dbUsername and $password === $dbPassword )
 			{
-				$_SESSION["julietLogin"] = md5( uniqid( rand(), true ) );
+				$_SESSION["julietLogin"] = hash( "whirlpool", uniqid( rand(), true ) );
 				$_SESSION["julietTime"] = time();
+				$_SESSION["userId"] = $dbIdUser;
 
 				header("Location: /produtos.php");
 			}

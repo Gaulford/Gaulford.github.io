@@ -16,26 +16,26 @@
             <?php require_once("includes/navigation.php"); ?>
 
             <section class="cmp-content">
-                <form action="#" method="post">
+                <form action="#" method="post" enctype="multipart/form-data">
                     <fieldset class="cmp-box-space">
                         <h1>Produto: Nome produto</h1>
                         <div class="grid">
                             <div class="col-48">
                                 <div class="mod-input">
-                                    <input type="text" name="name-product" placeholder="Insira o nome do produto" value="<?php showData( $checkProductData, $sqlProduct[0]["Produto"], "" ); ?>" >
+                                    <input type="text" name="name_product" placeholder="Insira o nome do produto" value="<?php showData( $checkProductData, $sqlProduct[0]["Produto"], "" ); ?>" >
                                 </div>
                                 <div class="mod-input">
-                                    <input type="text" name="price-product" placeholder="Insira preço do produto" value="<?php showData( $checkProductData, $sqlProduct[0]["Preco"], "" ); ?>" >
+                                    <input type="text" name="price_product" placeholder="Insira preço do produto" value="<?php showData( $checkProductData, $sqlProduct[0]["Preco"], "" ); ?>" >
                                 </div>
                                 <div class="mod-input">
-                                    <input type="text" name="discount -product" placeholder="Insira o desconto do produto" value="<?php showData( $checkProductData, $sqlProduct[0]["Desconto"], "" ); ?>" >
+                                    <input type="text" name="discount_product" placeholder="Insira o desconto do produto" value="<?php showData( $checkProductData, $sqlProduct[0]["Desconto"], "" ); ?>" >
                                 </div>
                                 <div class="mod-input">
-                                    <input type="text" name="inventory-product" placeholder="Insira quantos produtos existem no estoque" value="<?php showData( $checkProductData, $sqlProduct[0]["Estoque"], "" ); ?>" >
+                                    <input type="text" name="inventory_product" placeholder="Insira quantos produtos existem no estoque" value="<?php showData( $checkProductData, $sqlProduct[0]["Estoque"], "" ); ?>" >
                                 </div>
                             </div>
                             <div class="mod-input col-48">
-                                <textarea name="desc-product" cols="30" rows="10" placeholder="Insira a descrição do produto">
+                                <textarea name="desc_product" cols="30" rows="10" placeholder="Insira a descrição do produto">
                                     <?php showData( $checkProductData, $sqlProduct[0]["Descricao"], "" ); ?>
                                 </textarea>
                             </div>
@@ -46,11 +46,11 @@
                                     <h2>Ativar o produto?</h2>
                                 </div>
                                 <div class="mod-input-mark col-1-3">
-                                    <input type="radio" name="product-active" value="1" <?php showData( $sqlProduct[0]["Ativo"], "checked", "" ); ?> >
+                                    <input type="radio" name="active_product" value="1" <?php showData( $sqlProduct[0]["Ativo"], "checked", "" ); ?> >
                                     <label for="product-active">Sim</label>
                                 </div>
                                 <div class="mod-input-mark">
-                                    <input type="radio" name="product-active" value="0" <?php showData( $sqlProduct[0]["Ativo"], "", "checked" ); ?> >
+                                    <input type="radio" name="active_product" value="0" <?php showData( $sqlProduct[0]["Ativo"], "", "checked" ); ?> >
                                     <label for="product-active">Não</label>
                                 </div>
                             </div>
@@ -58,31 +58,32 @@
                                 <div class="grid">
                                     <?php if ( $checkCategoryData ) { ?>
                                     <div class="mod-input col-48">
-                                        <select name="product-category">
+                                        <select name="category_product">
                                             <?php foreach ( $allCategories as $key ) { ?>
-                                            <option value="<?php echo $key["idCategoria"]; ?>">
-                                                <?php echo $key["Categoria"]; ?>
-                                            </option>
+                                                <?php if ( isset( $_GET["update"] ) and $key["idCategoria"] == $_GET["update"]  ) { ?>
+                                                <option value="<?php echo $key["idCategoria"]; ?>" selected>
+                                                    <?php echo $key["Categoria"]; ?>
+                                                </option>
+                                                <?php } else { ?>
+                                                <option value="<?php echo $key["idCategoria"]; ?>">
+                                                    <?php echo $key["Categoria"]; ?>
+                                                </option>
+                                                <?php } ?>
                                             <?php } ?>
                                         </select>
                                     </div>
                                     <?php } ?>
                                     <div class="mod-input col-48">
-                                        <input type="file" name="product-image">
+                                        <input type="file" name="image_product">
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <?php
-                            if ( isset( $_GET ) and array_key_exists( "update", $_GET ) )
-                            {
-                                echo "<input type='hidden' name='update'>";
-                            }
-                            else
-                            {
-                                echo "<input type='hidden' name='insert'>";
-                            }
-                        ?>
+                        <?php if ( isset( $_GET ) and array_key_exists( "update", $_GET ) )  { ?>
+                            <input type='hidden' name='update' value="<?php echo $_GET['update'] ?>">
+                        <?php } else { ?>
+                            <input type='hidden' name='insert'>
+                        <?php } ?>
                         <button class="mod-btn">
                             Inserir produto
                         </button>
