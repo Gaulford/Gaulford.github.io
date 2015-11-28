@@ -3407,19 +3407,24 @@ body {
   font-family: "Open_Sans";
   font-size: 16px;
   font-size: 1rem;
+  overflow: hidden;
 }
 
-/* line 33, ../../../source/assets/css/main.scss */
+/* line 34, ../../../source/assets/css/main.scss */
 .pages-list-data .cmp-box-space, .pages-list-data .cmp-box-no-space {
   overflow: hidden;
 }
-/* line 38, ../../../source/assets/css/main.scss */
+/* line 39, ../../../source/assets/css/main.scss */
 .pages-list-data .mod-btn {
   float: right;
   padding: 10px;
   text-decoration: none;
 }
-/* line 47, ../../../source/assets/css/main.scss */
+/* line 46, ../../../source/assets/css/main.scss */
+.pages-list-data .cmp-content {
+  overflow: auto;
+}
+/* line 49, ../../../source/assets/css/main.scss */
 .pages-list-data .cmp-content h1 {
   float: left;
   font-size: 20px;
@@ -3427,18 +3432,41 @@ body {
   color: #999999;
   line-height: 1.6;
 }
+/* line 58, ../../../source/assets/css/main.scss */
+.pages-list-data .col-48 {
+  margin-left: 3.8%;
+}
+/* line 62, ../../../source/assets/css/main.scss */
+.pages-list-data .col-48:first-child {
+  margin-left: 0;
+}
+/* line 68, ../../../source/assets/css/main.scss */
+.pages-list-data .mod-warning {
+  background-color: #ffc40e;
+}
+/* line 71, ../../../source/assets/css/main.scss */
+.pages-list-data .mod-warning p {
+  margin: 0;
+  font-size: 15pxpx;
+  font-size: 0.9375pxrem;
+  color: #ffffff;
+}
+/* line 78, ../../../source/assets/css/main.scss */
+.pages-list-data .cmp-footer {
+  display: none;
+}
 
-/* line 57, ../../../source/assets/css/main.scss */
+/* line 83, ../../../source/assets/css/main.scss */
 .page-login {
   background-color: #f5f5f5;
 }
 
-/* line 62, ../../../source/assets/css/main.scss */
+/* line 88, ../../../source/assets/css/main.scss */
 .cmp-header {
   overflow: hidden;
   text-align: center;
 }
-/* line 67, ../../../source/assets/css/main.scss */
+/* line 93, ../../../source/assets/css/main.scss */
 .cmp-header h1 {
   display: inline-block;
   font-size: 13px;
@@ -3446,25 +3474,25 @@ body {
   color: #fff;
   text-align: center;
 }
-/* line 75, ../../../source/assets/css/main.scss */
+/* line 101, ../../../source/assets/css/main.scss */
 .cmp-header .action-menu {
   float: left;
   font-size: 20px;
   font-size: 1.25rem;
   color: #fff;
 }
-/* line 82, ../../../source/assets/css/main.scss */
+/* line 108, ../../../source/assets/css/main.scss */
 .cmp-header .cmp-breadcrumbs {
   float: right;
 }
 
-/* line 88, ../../../source/assets/css/main.scss */
+/* line 114, ../../../source/assets/css/main.scss */
 .cmp-access {
   width: 300px;
   float: left;
   background-color: #374850;
 }
-/* line 94, ../../../source/assets/css/main.scss */
+/* line 120, ../../../source/assets/css/main.scss */
 .cmp-access h2 {
   padding: 20px;
   font-size: 11px;
@@ -3473,7 +3501,7 @@ body {
   text-transform: uppercase;
   color: #7C8487;
 }
-/* line 105, ../../../source/assets/css/main.scss */
+/* line 131, ../../../source/assets/css/main.scss */
 .cmp-access li a {
   display: block;
   overflow: hidden;
@@ -3488,23 +3516,23 @@ body {
   color: #f5f5f5;
   text-decoration: none;
 }
-/* line 116, ../../../source/assets/css/main.scss */
+/* line 142, ../../../source/assets/css/main.scss */
 .cmp-access li a:hover {
   background-color: #455A64;
   color: #fff;
 }
-/* line 123, ../../../source/assets/css/main.scss */
+/* line 149, ../../../source/assets/css/main.scss */
 .cmp-access li .fa {
   margin-right: 15px;
   float: left;
 }
-/* line 129, ../../../source/assets/css/main.scss */
+/* line 155, ../../../source/assets/css/main.scss */
 .cmp-access li .fa-angle-right {
   margin: 0;
   float: right;
 }
 
-/* line 137, ../../../source/assets/css/main.scss */
+/* line 163, ../../../source/assets/css/main.scss */
 .cmp-content {
   width: 75%;
   position: relative;
@@ -3512,7 +3540,7 @@ body {
   background-color: #f5f5f5;
 }
 
-/* line 145, ../../../source/assets/css/main.scss */
+/* line 171, ../../../source/assets/css/main.scss */
 .cmp-box-space, .cmp-box-no-space {
   margin: 20px 20px 50px;
   padding: 20px;
@@ -3526,20 +3554,20 @@ body {
   border: solid 1px #dddddd;
 }
 
-/* line 155, ../../../source/assets/css/main.scss */
+/* line 181, ../../../source/assets/css/main.scss */
 .cmp-box-no-space {
   padding: 0;
 }
 
-/* line 161, ../../../source/assets/css/main.scss */
+/* line 187, ../../../source/assets/css/main.scss */
 .cmp-table-data {
   width: 100%;
 }
-/* line 165, ../../../source/assets/css/main.scss */
+/* line 191, ../../../source/assets/css/main.scss */
 .cmp-table-data th {
   font-weight: bold;
 }
-/* line 170, ../../../source/assets/css/main.scss */
+/* line 196, ../../../source/assets/css/main.scss */
 .cmp-table-data td,
 .cmp-table-data th {
   padding: 12px 20px;
@@ -3548,30 +3576,30 @@ body {
   color: #000000;
   text-align: center;
 }
-/* line 178, ../../../source/assets/css/main.scss */
+/* line 204, ../../../source/assets/css/main.scss */
 .cmp-table-data td a,
 .cmp-table-data th a {
   font-size: 20px;
   font-size: 1.25rem;
   color: #000000;
 }
-/* line 185, ../../../source/assets/css/main.scss */
+/* line 211, ../../../source/assets/css/main.scss */
 .cmp-table-data td {
   border-top: solid 1px #dddddd;
 }
 
-/* line 191, ../../../source/assets/css/main.scss */
+/* line 217, ../../../source/assets/css/main.scss */
 .cmp-container {
   width: 100%;
   overflow: hidden;
 }
 
-/* line 197, ../../../source/assets/css/main.scss */
+/* line 223, ../../../source/assets/css/main.scss */
 .mod-user-logged {
   overflow: hidden;
   padding: 20px;
 }
-/* line 202, ../../../source/assets/css/main.scss */
+/* line 228, ../../../source/assets/css/main.scss */
 .mod-user-logged .user-photo {
   float: left;
   overflow: hidden;
@@ -3581,13 +3609,13 @@ body {
   -o-border-radius: 100%;
   border-radius: 100%;
 }
-/* line 209, ../../../source/assets/css/main.scss */
+/* line 235, ../../../source/assets/css/main.scss */
 .mod-user-logged .user-infos {
   float: left;
   margin: 0 20px;
   max-width: 155px;
 }
-/* line 215, ../../../source/assets/css/main.scss */
+/* line 241, ../../../source/assets/css/main.scss */
 .mod-user-logged .user-infos h1 {
   font-size: 16px;
   font-size: 1rem;
@@ -3595,33 +3623,33 @@ body {
   color: #f5f5f5;
   line-height: 1.7;
 }
-/* line 223, ../../../source/assets/css/main.scss */
+/* line 249, ../../../source/assets/css/main.scss */
 .mod-user-logged .user-infos p {
   font-size: 13px;
   font-size: 0.8125rem;
   color: #f5f5f5;
   line-height: 1.7;
 }
-/* line 230, ../../../source/assets/css/main.scss */
+/* line 256, ../../../source/assets/css/main.scss */
 .mod-user-logged .user-infos i {
   margin-right: 10px;
 }
-/* line 236, ../../../source/assets/css/main.scss */
+/* line 262, ../../../source/assets/css/main.scss */
 .mod-user-logged .btn-sair {
   line-height: 3;
   float: right;
   color: #fff;
 }
 
-/* line 244, ../../../source/assets/css/main.scss */
+/* line 270, ../../../source/assets/css/main.scss */
 .cmp-breadcrumbs {
   overflow: hidden;
 }
-/* line 248, ../../../source/assets/css/main.scss */
+/* line 274, ../../../source/assets/css/main.scss */
 .cmp-breadcrumbs li {
   float: left;
 }
-/* line 252, ../../../source/assets/css/main.scss */
+/* line 278, ../../../source/assets/css/main.scss */
 .cmp-breadcrumbs li:before {
   margin: 0 5px 0 10px;
   content: "/";
@@ -3629,11 +3657,11 @@ body {
   font-size: 0.9375rem;
   color: #fff;
 }
-/* line 262, ../../../source/assets/css/main.scss */
+/* line 288, ../../../source/assets/css/main.scss */
 .cmp-breadcrumbs li:first-child:before {
   display: none;
 }
-/* line 269, ../../../source/assets/css/main.scss */
+/* line 295, ../../../source/assets/css/main.scss */
 .cmp-breadcrumbs a {
   font-size: 15px;
   font-size: 0.9375rem;
@@ -3642,7 +3670,7 @@ body {
   line-height: 1.4;
 }
 
-/* line 278, ../../../source/assets/css/main.scss */
+/* line 304, ../../../source/assets/css/main.scss */
 .cmp-footer {
   position: absolute;
   left: 0;
@@ -3650,14 +3678,14 @@ body {
   width: 100%;
   margin-bottom: 15px;
 }
-/* line 285, ../../../source/assets/css/main.scss */
+/* line 311, ../../../source/assets/css/main.scss */
 .cmp-footer summary {
   font-size: 13px;
   font-size: 0.8125rem;
   color: #999999;
   text-align: center;
 }
-/* line 291, ../../../source/assets/css/main.scss */
+/* line 317, ../../../source/assets/css/main.scss */
 .cmp-footer summary a {
   font-size: 13px;
   font-size: 0.8125rem;
@@ -3665,13 +3693,13 @@ body {
   text-decoration: none;
 }
 
-/* line 300, ../../../source/assets/css/main.scss */
+/* line 326, ../../../source/assets/css/main.scss */
 .cmp-header {
   background-color: #455A64;
   padding: 15px 20px;
 }
 
-/* line 310, ../../../source/assets/css/main.scss */
+/* line 336, ../../../source/assets/css/main.scss */
 .pages-manage-data .cmp-content h1,
 .pages-manage-data .cmp-content h2 {
   margin-bottom: 30px;
@@ -3679,41 +3707,82 @@ body {
   font-size: 1.25rem;
   color: #999999;
 }
-/* line 318, ../../../source/assets/css/main.scss */
+/* line 344, ../../../source/assets/css/main.scss */
 .pages-manage-data .cmp-content h2 {
   margin: 10px 0 0;
   font-size: 15px;
   font-size: 0.9375rem;
 }
-/* line 325, ../../../source/assets/css/main.scss */
+/* line 351, ../../../source/assets/css/main.scss */
+.pages-manage-data .cmp-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 20;
+  width: 100%;
+  height: 100%;
+  background-color: #000000;
+  opacity: 0.5;
+}
+/* line 362, ../../../source/assets/css/main.scss */
+.pages-manage-data .cmp-lightbox {
+  display: none;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  -moz-transform: translateX(-50%) translateY(-50%);
+  -ms-transform: translateX(-50%) translateY(-50%);
+  -o-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+  z-index: 20;
+  padding: 15px;
+  background-color: #ffffff;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  border-radius: 10px;
+}
+/* line 370, ../../../source/assets/css/main.scss */
+.pages-manage-data .cmp-lightbox a {
+  position: absolute;
+  bottom: 100%;
+  left: 100%;
+  font-size: 30px;
+  font-size: 1.875rem;
+  color: #374850;
+}
+/* line 378, ../../../source/assets/css/main.scss */
 .pages-manage-data .mod-btn {
   padding: 15px 20px;
   font-size: 15px;
   font-size: 0.9375rem;
 }
-/* line 331, ../../../source/assets/css/main.scss */
+/* line 384, ../../../source/assets/css/main.scss */
 .pages-manage-data .mod-input {
   margin: 0 0 15px;
 }
-/* line 335, ../../../source/assets/css/main.scss */
+/* line 388, ../../../source/assets/css/main.scss */
 .pages-manage-data .mod-input textarea {
   min-height: 181px;
   font-size: 13px;
 }
-/* line 342, ../../../source/assets/css/main.scss */
+/* line 395, ../../../source/assets/css/main.scss */
 .pages-manage-data .mod-input-mark {
   margin: 10px 0 15px;
 }
-/* line 347, ../../../source/assets/css/main.scss */
+/* line 400, ../../../source/assets/css/main.scss */
 .pages-manage-data .col-48 {
   margin-left: 3.8%;
 }
-/* line 351, ../../../source/assets/css/main.scss */
+/* line 404, ../../../source/assets/css/main.scss */
 .pages-manage-data .col-48:first-child {
   margin-left: 0;
 }
 
-/* line 358, ../../../source/assets/css/main.scss */
+/* line 411, ../../../source/assets/css/main.scss */
 .cmp-login {
   width: 278px;
   position: absolute;
@@ -3734,7 +3803,7 @@ body {
   border-radius: 3px;
   text-align: center;
 }
-/* line 371, ../../../source/assets/css/main.scss */
+/* line 424, ../../../source/assets/css/main.scss */
 .cmp-login .user-call legend {
   width: 100%;
   margin-bottom: 10px;
@@ -3742,23 +3811,23 @@ body {
   font-size: 1.0625rem;
   color: #000000;
 }
-/* line 379, ../../../source/assets/css/main.scss */
+/* line 432, ../../../source/assets/css/main.scss */
 .cmp-login .user-call p {
   font-size: 13px;
   font-size: 0.8125rem;
   color: #999999;
 }
-/* line 386, ../../../source/assets/css/main.scss */
+/* line 439, ../../../source/assets/css/main.scss */
 .cmp-login .mod-input {
   margin-top: 15px;
 }
-/* line 390, ../../../source/assets/css/main.scss */
+/* line 443, ../../../source/assets/css/main.scss */
 .cmp-login .mod-input input {
   border: none;
   width: 88%;
   display: inline-block;
 }
-/* line 397, ../../../source/assets/css/main.scss */
+/* line 450, ../../../source/assets/css/main.scss */
 .cmp-login .mod-input i {
   min-width: 13px;
   width: 10%;
@@ -3766,7 +3835,7 @@ body {
   font-size: 0.9375rem;
   color: #999999;
 }
-/* line 405, ../../../source/assets/css/main.scss */
+/* line 458, ../../../source/assets/css/main.scss */
 .cmp-login .mod-btn {
   margin: 15px 0;
   display: block;
@@ -3774,7 +3843,7 @@ body {
   padding: 10px;
   text-align: center;
 }
-/* line 414, ../../../source/assets/css/main.scss */
+/* line 467, ../../../source/assets/css/main.scss */
 .cmp-login a {
   font-size: 13px;
   font-size: 0.8125rem;
@@ -3782,7 +3851,7 @@ body {
   text-decoration: none;
 }
 
-/* line 422, ../../../source/assets/css/main.scss */
+/* line 475, ../../../source/assets/css/main.scss */
 .mod-input {
   padding: 10px;
   border: solid 1px #dddddd;
@@ -3792,7 +3861,7 @@ body {
   -o-border-radius: 3px;
   border-radius: 3px;
 }
-/* line 428, ../../../source/assets/css/main.scss */
+/* line 481, ../../../source/assets/css/main.scss */
 .mod-input input,
 .mod-input textarea,
 .mod-input select {
@@ -3804,19 +3873,20 @@ body {
   color: #000000;
 }
 
-/* line 442, ../../../source/assets/css/main.scss */
+/* line 495, ../../../source/assets/css/main.scss */
 .mod-input-mark input {
   margin-right: 15px;
 }
-/* line 447, ../../../source/assets/css/main.scss */
+/* line 500, ../../../source/assets/css/main.scss */
 .mod-input-mark label {
   font-size: 15px;
   font-size: 0.9375rem;
   color: #999999;
 }
 
-/* line 454, ../../../source/assets/css/main.scss */
+/* line 507, ../../../source/assets/css/main.scss */
 .mod-btn {
+  display: inline-block;
   background-color: #FFC107;
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
@@ -3828,9 +3898,10 @@ body {
   font-size: 13px;
   font-size: 0.8125rem;
   color: #fff;
+  text-decoration: none;
 }
 
-/* line 464, ../../../source/assets/css/main.scss */
+/* line 519, ../../../source/assets/css/main.scss */
 .mod-user-photo {
   padding: 10px;
   margin-bottom: 15px;
@@ -3842,11 +3913,11 @@ body {
   -o-border-radius: 100%;
   border-radius: 100%;
 }
-/* line 472, ../../../source/assets/css/main.scss */
+/* line 527, ../../../source/assets/css/main.scss */
 .mod-user-photo img {
   display: none;
 }
-/* line 477, ../../../source/assets/css/main.scss */
+/* line 532, ../../../source/assets/css/main.scss */
 .mod-user-photo i {
   font-size: 50px;
   font-size: 3.125rem;

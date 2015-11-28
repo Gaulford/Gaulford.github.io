@@ -10,7 +10,7 @@
                 Santa Ana, CA
             </p>
         </div>
-        <a href="#" title="Sair" class="btn-sair">
+        <a href="?logout=true" title="Sair" class="btn-sair">
             <i class="fa fa-power-off"></i>
         </a>
     </article>
@@ -19,28 +19,35 @@
 
     <ul>
         <li>
-            <a href="#" title="Home">
+            <a href="/" title="Home">
                 <i class="fa fa-home"></i>
                 Home
                 <i class="fa fa-angle-right"></i>
             </a>
         </li>
         <li>
-            <a href="#" title="Usuários">
+            <a href="/busca.php" title="Home">
+                <i class="fa fa-search"></i>
+                Busca
+                <i class="fa fa-angle-right"></i>
+            </a>
+        </li>
+        <li>
+            <a href="/lista-usuarios.php" title="Usuários">
                 <i class="fa fa-users"></i>
                 Usuários
                 <i class="fa fa-angle-right"></i>
             </a>
         </li>
         <li>
-            <a href="#" title="Produtos">
+            <a href="/lista-produtos.php" title="Produtos">
                 <i class="fa fa-square"></i>
                 Produtos
                 <i class="fa fa-angle-right"></i>
             </a>
         </li>
         <li>
-            <a href="#" title="Categorias">
+            <a href="/lista-categorias.php" title="Categorias">
                 <i class="fa fa-ticket"></i>
                 Categorias
                 <i class="fa fa-angle-right"></i>

@@ -67,11 +67,11 @@
 
 		function showData( $itemToCheck, $trueShow, $falseShow )
 		{
-			if ( isset( $itemToCheck ) )
+			if ( isset( $itemToCheck ) && $itemToCheck )
 			{
 				echo $trueShow;
 			}
-			else if ( isset( $falseShow )  )
+			else if ( isset( $falseShow ) && $falseShow  )
 			{
 				echo $falseShow;
 			}
@@ -82,39 +82,43 @@
 	{
 		require_once("/system/core/connect.php");
 
-		$sqlQueryInputs = array( $_POST );
-		$sqlQueryInputs = $sqlQueryInputs[0];
-		$dbImage = addslashes( file_get_contents( $_FILES["image_product"]["tmp_name"] ) );
+		$sqlQueryInputs = $_POST;
 
-		$sqlQueryInputs = array(
-			"name_product" => $sqlQueryInputs["name_product"],
-		    "desc_product" => $sqlQueryInputs["desc_product"],
-		    "price_product" => $sqlQueryInputs["price_product"],
-		    "discount_product" => $sqlQueryInputs["discount_product"],
-		    "category_product" => $sqlQueryInputs["category_product"],
-		    "active_product" => $sqlQueryInputs["active_product"],
-		    "idUsuario" => $_SESSION["userId"],
-		    "inventory_product" => $sqlQueryInputs["inventory_product"],
-		    "imagem" => $dbImage,
-		    "id_product" => $sqlQueryInputs["update"]
+		$dbImageOpen = fopen( $_FILES["image_product"]["tmp_name"], "rb" );
+		$dbImageContent = fread( $dbImageOpen, filesize( $_FILES["image_product"]["tmp_name"] ) );
+		fclose( $dbImageOpen );
+
+		$dbImageContent = array(
+			$dbImageContent,
+			SQLSRV_PARAM_IN, 
+            SQLSRV_PHPTYPE_STREAM(SQLSRV_ENC_BINARY), 
+            SQLSRV_SQLTYPE_VARBINARY('max')
 		);
 
-		echo "<pre>";
-		print_R( $sqlQueryInputs );
-		echo "</pre>";
-		die();
+		$sqlQueryInputs = array(
+			$sqlQueryInputs["name_product"],
+		    $sqlQueryInputs["desc_product"],
+		    $sqlQueryInputs["price_product"],
+		    $sqlQueryInputs["discount_product"],
+		    $sqlQueryInputs["category_product"],
+		    $sqlQueryInputs["active_product"],
+		    $_SESSION["userId"],
+		    $sqlQueryInputs["inventory_product"],
+		    $dbImageContent,
+		    $sqlQueryInputs["update"]
+		);
 
 		$sqlQuery = "
 			update Produto 
 			set 
-			nomeProduto = ? 
-			descProduto = ? 
-			precProduto = ? 
-			descontoPromocao = ? 
-			idCategoria = ? 
-			ativoProduto = ? 
-			idUsuario = ? 
-			qtdMinEstoque = ? 
+			nomeProduto = ?, 
+			descProduto = ?, 
+			PrecProduto = ?, 
+			descontoPromocao = ?, 
+			idCategoria = ?, 
+			ativoProduto = ?, 
+			idUsuario = ?, 
+			qtdMinEstoque = ?, 
 			imagem = ? 
 			where idProduto = ?
 		";
@@ -125,10 +129,66 @@
 		{
 		    die( print_r( sqlsrv_errors(), true) );
 		}
+		else
+		{
+			echo "Works!";
+		}
 		
 	}
 	else
 	{
+		require_once("/system/core/connect.php");
 
+		$sqlQueryInputs = $_POST;
+
+		$dbImageOpen = fopen( $_FILES["image_product"]["tmp_name"], "rb" );
+		$dbImageContent = fread( $dbImageOpen, filesize( $_FILES["image_product"]["tmp_name"] ) );
+		fclose( $dbImageOpen );
+
+		$dbImageContent = array(
+			$dbImageContent,
+			SQLSRV_PARAM_IN, 
+            SQLSRV_PHPTYPE_STREAM(SQLSRV_ENC_BINARY), 
+            SQLSRV_SQLTYPE_VARBINARY('max')
+		);
+
+		$sqlQueryInputs = array(
+			$sqlQueryInputs["name_product"],
+		    $sqlQueryInputs["desc_product"],
+		    $sqlQueryInputs["price_product"],
+		    $sqlQueryInputs["discount_product"],
+		    $sqlQueryInputs["category_product"],
+		    $sqlQueryInputs["active_product"],
+		    $_SESSION["userId"],
+		    $sqlQueryInputs["inventory_product"],
+		    $dbImageContent
+		);
+
+		$sqlQuery = "
+			insert into 
+			Produto 
+			(nomeProduto, 
+			descProduto, 
+			PrecProduto, 
+			descontoPromocao, 
+			idCategoria, 
+			ativoProduto, 
+			idUsuario, 
+			qtdMinEstoque, 
+			imagem) 
+			values 
+			(?, ?, ?, ?, ?, ?, ?, ?, ?)
+		";
+
+		$sqlInsertProducts = sqlsrv_query( $onConnect, $sqlQuery, $sqlQueryInputs );
+
+		if( !$sqlInsertProducts )
+		{
+		    die( print_r( sqlsrv_errors(), true) );
+		}
+		else
+		{
+			echo "Works!";
+		}
 	}
 ?>

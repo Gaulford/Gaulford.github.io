@@ -1,9 +1,6 @@
 <?php
 	require_once("/system/core/session-control.php");
 
-	// var_dump( hash( "sha256", "finalrwm98832247" ) );
-	// die();
-
 	if ( $_SERVER['REQUEST_METHOD'] === "POST" )
 	{
 		require_once("/system/core/connect.php");

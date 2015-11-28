@@ -35,7 +35,7 @@
                                 </div>
                             </div>
                             <div class="mod-input col-48">
-                                <textarea name="desc_product" cols="30" rows="10" placeholder="Insira a descrição do produto">
+                                <textarea name="desc_product" placeholder="Insira a descrição do produto">
                                     <?php showData( $checkProductData, $sqlProduct[0]["Descricao"], "" ); ?>
                                 </textarea>
                             </div>
@@ -87,7 +87,24 @@
                         <button class="mod-btn">
                             Inserir produto
                         </button>
+                        <?php if ( $sqlProduct[0]["Imagem"] ) { ?>
+                        <button class="mod-btn act-show-lightbox">
+                            Visualizar imagem
+                        </button>
+                        <?php } ?>
                     </fieldset>
+
+                    <?php if ( $sqlProduct[0]["Imagem"] ) { ?>
+                    <div class="cmp-overlay"></div>
+                    <div class="cmp-lightbox act-hide-lightbox">
+                        <a href="#" title="Fechar" class="act-close-lightbox">
+                            <i class="fa fa-times"></i>
+                        </a>
+                        <figure>
+                            <img src="<?php echo 'data:image;base64,'.base64_encode($sqlProduct[0]["Imagem"]); ?>">
+                        </figure>
+                    </div>
+                    <?php } ?>
                 </form>
 
                 <?php require_once("includes/footer.php"); ?>

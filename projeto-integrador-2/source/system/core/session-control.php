@@ -13,4 +13,11 @@
 		}
 	}
 
+	if ( $_SERVER['REQUEST_METHOD'] === "GET" and array_key_exists("logout", $_GET) )
+	{
+		session_destroy();
+		session_unset();
+		header("Location: /");
+	}
+
 ?>
