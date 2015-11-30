@@ -108,11 +108,11 @@ do ->
 			hasChanged: changed.compareSha1Digest
 		.pipe compass
 			style: "expanded"
-			sass: "#{paths.source.css}"
-			css: "#{paths.hml.css}"
-			javascript: "{paths.hml.js}"
-			font: "#{paths.hml.font}"
-			image: "#{paths.source.image}"
+			sass: "source/2c/assets/css/"
+			css: "hml/2c/assets/css/"
+			javascript: "hml/2c/assets/js/"
+			font: "hml/2c/assets/font/"
+			image: "source/2c/assets/img/"
 			comments: true
 			logging: true
 			time: true
