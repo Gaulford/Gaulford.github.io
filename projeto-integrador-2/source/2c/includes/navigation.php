@@ -19,35 +19,35 @@
 
     <ul>
         <li>
-            <a href="" title="Home">
+            <a href="/" title="Home">
                 <i class="fa fa-home"></i>
                 Home
                 <i class="fa fa-angle-right"></i>
             </a>
         </li>
         <li>
-            <a href="busca.php" title="Home">
+            <a href="/busca.php" title="Home">
                 <i class="fa fa-search"></i>
                 Busca
                 <i class="fa fa-angle-right"></i>
             </a>
         </li>
         <li>
-            <a href="lista-usuarios.php" title="Usuários">
+            <a href="/lista-usuarios.php" title="Usuários">
                 <i class="fa fa-users"></i>
                 Usuários
                 <i class="fa fa-angle-right"></i>
             </a>
         </li>
         <li>
-            <a href="lista-produtos.php" title="Produtos">
+            <a href="/lista-produtos.php" title="Produtos">
                 <i class="fa fa-square"></i>
                 Produtos
                 <i class="fa fa-angle-right"></i>
             </a>
         </li>
         <li>
-            <a href="lista-categorias.php" title="Categorias">
+            <a href="/lista-categorias.php" title="Categorias">
                 <i class="fa fa-ticket"></i>
                 Categorias
                 <i class="fa fa-angle-right"></i>

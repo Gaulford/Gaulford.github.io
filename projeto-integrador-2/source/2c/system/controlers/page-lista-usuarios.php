@@ -1,9 +1,9 @@
 <?php
-	require_once("system/core/session-control.php");
+	require_once("/system/core/session-control.php");
 
 	if ( $_SERVER['REQUEST_METHOD'] === "GET" )
 	{
-		require_once("system/core/connect.php");
+		require_once("/system/core/connect.php");
 
 		if ( array_key_exists( "delete", $_GET ) )
 		{
@@ -14,7 +14,7 @@
 			";
 
 			$sqlInputs = array( $_GET["delete"] );
-			$sqlRun = sqlsrv_query( $onConnect, $sqlQuery, $sqlInputs );
+			$slRun = sqlsrv_query( $onConnect, $sqlQuery, $sqlInputs );
 		}
 
 		$sqlQuery = "

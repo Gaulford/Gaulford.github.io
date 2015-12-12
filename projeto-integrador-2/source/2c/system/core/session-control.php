@@ -1,24 +1,45 @@
 <?php
 
-	session_start();
+	require_once( 'system/core/base.php' );
 
-	if ( !isset( $_SESSION ) or !array_key_exists("julietLogin", $_SESSION) )
+	function beginSession ( $userId )
 	{
-		$currentUrl = "http://" . $_SERVER["SERVER_NAME"] . $_SERVER["REQUEST_URI"];
-		$baseUrl = "http://" . $_SERVER["SERVER_NAME"] . "/2c/";
+		session_start();
 
-		if ( $currentUrl !== $baseUrl )
-		{
-			header("Location: $baseUrl");
-			
-		}
+		$_SESSION["julietLogin"] = hash( "whirlpool", uniqid( rand(), true ) );
+		$_SESSION["julietTime"] = time();
+		$_SESSION["userId"] = $userId;
 	}
 
-	if ( $_SERVER['REQUEST_METHOD'] === "GET" and array_key_exists("logout", $_GET) )
+	function logoutSession ()
 	{
 		session_destroy();
 		session_unset();
-		header("Location: /2c/");
+		header( "Location: " . constant("BASE_URL") );
+	}
+
+	function ctrlTimeSession ()
+	{
+		if ( isset( $SESSION["julietTime"] ) and array_key_exists("julietLogin", $_SESSION) )
+		{
+			$SESSION["julietTime"] = time();
+
+			if ( time() - $SESSION["julietTime"] > 900 )
+			{
+				logoutSession();
+			}
+		}
+	}
+
+	function isSessionOn ()
+	{
+		if ( !isset( $_SESSION ) or !array_key_exists("julietLogin", $_SESSION) )
+		{
+			if ( constant("BASE_URL") !== constant("FULL_URL") )
+			{
+				header("Location: " . constant("BASE_URL"));
+			}
+		}
 	}
 
 ?>

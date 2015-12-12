@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<?php require_once("system/controlers/page-lista-produtos.php"); ?>
+<?php require_once("/system/controlers/page-lista-produtos.php"); ?>
 
 <!--[if IE 8]>         <html class="lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!--> <html> <!--<![endif]-->
@@ -20,7 +20,7 @@
                     <h1>Lista de produtos cadastrados</h1>
 
                     <div class="cmp-inset-action">
-                        <a href="produtos.php" class="mod-btn">
+                        <a href="/produtos.php" class="mod-btn">
                             <i class="fa file-text-o"></i>
                             Inserir produto
                         </a>
@@ -49,12 +49,12 @@
                                     <?php echo $key["Desconto"]; ?>
                                 </td>
                                 <td>
-                                    <a href="produtos.php?update=<?php echo $key["Id"]; ?>" title="Editar produto">
+                                    <a href="/produtos.php?update=<?php echo $key["Id"]; ?>" title="Editar produto">
                                         <i class="fa fa-pencil-square-o"></i>
                                     </a>
                                 </td>
                                 <td>
-                                    <a href="lista-produtos.php?delete=<?php echo $key["Id"]; ?>" title="Excluir categoria">
+                                    <a href="/lista-produtos.php?delete=<?php echo $key["Id"]; ?>" title="Excluir categoria">
                                         <i class="fa fa-times"></i>
                                     </a>
                                 </td>

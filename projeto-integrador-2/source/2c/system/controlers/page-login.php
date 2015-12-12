@@ -1,41 +1,45 @@
 <?php
-	require_once("system/core/session-control.php");
+
+	require_once( 'system/core/base.php' );
+	require_once( 'system/core/session-control.php' );
+
+	isSessionOn();
+	ctrlTimeSession();
+
 
 	if ( $_SERVER['REQUEST_METHOD'] === "POST" )
 	{
 		require_once("system/core/connect.php");
+		require_once("system/core/dbMethods.php");
 
-		$sqlQuery = "select idUsuario, loginUsuario, senhaUsuario from Usuario where loginUsuario = ?";
-		$sqlInputs = array( $_POST["admin-username"] );
-		$sqlRun = sqlsrv_query( $onConnect, $sqlQuery, $sqlInputs );
+		$username = $_POST["admin-username"];
+		$password = hash( "sha256", $_POST["admin-pass"] );
 
-		if ( !$sqlRun )
-		{
-			die( var_dump( sqlsrv_errors(), true ) );
-			exit();
-		}
-		else if ( !sqlsrv_fetch( $sqlRun ) )
-		{
-			die( var_dump( sqlsrv_errors(), true ) );
-			exit();
-		}
-		else
-		{
-			$username = $_POST["admin-username"];
-			$password = hash( "sha256", $_POST["admin-pass"] );
-			$dbIdUser = sqlsrv_get_field( $sqlRun, 0 );
-			$dbUsername = sqlsrv_get_field( $sqlRun, 1 );
-			$dbPassword = sqlsrv_get_field( $sqlRun, 2 );
+		$tableUser = "Usuario";
+		$whoUser = array(
+			"loginUsuario",
+			$username
+		);
+		$userInfos = array(
+			"loginUsuario",
+			"senhaUsuario"
+		);
 
-			if ( $username === $dbUsername and $password === $dbPassword )
-			{
-				$_SESSION["julietLogin"] = hash( "whirlpool", uniqid( rand(), true ) );
-				$_SESSION["julietTime"] = time();
-				$_SESSION["userId"] = $dbIdUser;
+		$dbConnection = dbConnection( $GLOBALS["dbServerName"], $GLOBALS["dbConnectionInfo"] );
+		$dbUserPass = dbSelect( $dbConnection, $tableUser, $userInfos, $whoUser );
 
-				header("Location: /2c/lista-produtos.php");
-			}
-		}
+		echo "<pre>";
+		print_r( $dbUserPass );
+		echo "</pre>";
+
+		// if ( $username === $dbUsername and $password === $dbPassword )
+		// {
+		// 	$_SESSION["julietLogin"] = hash( "whirlpool", uniqid( rand(), true ) );
+		// 	$_SESSION["julietTime"] = time();
+		// 	$_SESSION["userId"] = $dbIdUser;
+
+		// 	header("Location: /produtos.php");
+		// }
 	}
 
 ?>

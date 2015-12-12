@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<?php require_once("system/controlers/page-lista-usuarios.php"); ?>
+<?php require_once("/system/controlers/page-lista-usuarios.php"); ?>
 
 <!--[if IE 8]>         <html class="lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!--> <html> <!--<![endif]-->
@@ -20,7 +20,7 @@
                     <h1>Lista de usuários cadastrados</h1>
 
                     <div class="cmp-inset-action">
-                        <a href="usuarios.php" class="mod-btn">
+                        <a href="/usuarios.php" class="mod-btn">
                             <i class="fa file-text-o"></i>
                             Inserir usuário
                         </a>
@@ -62,12 +62,12 @@
                                     ?>
                                 </td>
                                 <td>
-                                    <a href="usuarios.php?update=<?php echo $key["Id"]; ?>" title="Editar produto">
+                                    <a href="/usuarios.php?update=<?php echo $key["Id"]; ?>" title="Editar produto">
                                         <i class="fa fa-pencil-square-o"></i>
                                     </a>
                                 </td>
                                 <td>
-                                    <a href="lista-usuarios.php?delete=<?php echo $key["Id"]; ?>" title="Excluir categoria">
+                                    <a href="/lista-usuarios.php?delete=<?php echo $key["Id"]; ?>" title="Excluir categoria">
                                         <i class="fa fa-times"></i>
                                     </a>
                                 </td>

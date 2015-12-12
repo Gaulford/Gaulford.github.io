@@ -1,9 +1,9 @@
 <?php
-	require_once("system/core/session-control.php");
+	require_once("/system/core/session-control.php");
 
 	if ( $_SERVER['REQUEST_METHOD'] === "GET" )
 	{
-		require_once("system/core/connect.php");
+		require_once("/system/core/connect.php");
 
 		$checkProductData = false;
 		$sqlProduct = false;
@@ -80,7 +80,7 @@
 	}
 	else if ( $_SERVER['REQUEST_METHOD'] === "POST" and array_key_exists( "update", $_POST )  )
 	{
-		require_once("system/core/connect.php");
+		require_once("/system/core/connect.php");
 
 		$sqlQueryInputs = $_POST;
 
@@ -137,7 +137,7 @@
 	}
 	else
 	{
-		require_once("system/core/connect.php");
+		require_once("/system/core/connect.php");
 
 		$sqlQueryInputs = $_POST;
 

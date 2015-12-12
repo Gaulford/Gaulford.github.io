@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<?php require_once("system/controlers/page-busca.php"); ?>
+<?php require_once("/system/controlers/page-busca.php"); ?>
 
 <!--[if IE 8]>         <html class="lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!--> <html> <!--<![endif]-->
@@ -71,12 +71,12 @@
                                     <?php echo $key["nomeCategoria"]; ?>
                                 </td>
                                 <td>
-                                    <a href="produtos.php?update=<?php echo $key["idProduto"]; ?>" title="Editar produto">
+                                    <a href="/produtos.php?update=<?php echo $key["idProduto"]; ?>" title="Editar produto">
                                         <i class="fa fa-pencil-square-o"></i>
                                     </a>
                                 </td>
                                 <td>
-                                    <a href="lista-produtos.php?delete=<?php echo $key["idProduto"]; ?>" title="Excluir produto">
+                                    <a href="/lista-produtos.php?delete=<?php echo $key["idProduto"]; ?>" title="Excluir produto">
                                         <i class="fa fa-times"></i>
                                     </a>
                                 </td>

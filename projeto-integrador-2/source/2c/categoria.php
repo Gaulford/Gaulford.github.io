@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<?php require_once("system/controlers/page-categorias.php"); ?>
+<?php require_once("/system/controlers/page-categorias.php"); ?>
 
 <!--[if IE 8]>         <html class="lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!--> <html> <!--<![endif]-->

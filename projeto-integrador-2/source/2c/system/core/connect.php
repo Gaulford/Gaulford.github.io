@@ -1,18 +1,42 @@
 <?php
 
-	$serverName = "i9yueekhr9.database.windows.net";
-	$connectInfo = array(
-		"Database" => "juliet",
-		"UID" => "TSI",
-		"PWD" => "SistemasInternet123",
-		"CharacterSet" => "UTF-8"
-	);
+	require_once( 'system/core/base.php' );
 
-	$onConnect = sqlsrv_connect( $serverName, $connectInfo );
-
-	if ( !$onConnect )
+	function dbConnection ( $serverName, $credentials )
 	{
-		die( print_r( sqlsrv_errors(), true ) );
+		$expectedInfos = array(
+			"Database" => false,
+			"UID" => false,
+			"PWD" => false,
+			"CharacterSet" => false
+		);
+
+		$onConnect;
+
+		if ( empty( $serverName ) and !$serverName )
+		{
+			throw new Exception( "É necessário inserir o nome do servidor do banco." );
+		}
+
+		foreach ( $expectedInfos as $key => $value )
+		{
+			if ( !array_key_exists( $key, $credentials ) )
+			{
+				throw new Exception( "O array não possui a credenciais esperada $key." );
+			}
+		}
+
+		$onConnect = sqlsrv_connect( $serverName, $credentials );
+
+		if( !$onConnect )
+		{
+			$errors = sqlsrv_errors();
+			throw new Exception( "Não foi possível estabelcer a conexão. Erro: $errors" );
+		}
+		else
+		{
+			return $onConnect;
+		}
 	}
 
 ?>
