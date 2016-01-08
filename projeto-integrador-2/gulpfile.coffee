@@ -3,7 +3,6 @@ do ->
 	# Load all plugins
 	gulp = require "gulp"
 	browserSync = require "browser-sync"
-	connect = require "gulp-connect-php"
 	del = require "del"
 	htmlmin = require "gulp-htmlmin"
 	imagemin = require "gulp-imagemin"
@@ -50,17 +49,9 @@ do ->
 
 	# Start server with php
 	gulp.task "up-server", ->
-		connect.server 
-			base: "./#{paths.hml.root}"
-			hostname: "localhost"
+		browserSync
+			proxy: "localhost"
 			port: 3000
-			bin: "C:/xampp/php/php.exe"
-			ini: "C:/xampp/php/php.ini"
-			open: true, ->
-				# Build browser sync task
-				browserSync
-					proxy: "localhost:3000"
-					port: 8000
 
 		# Set files to watch
 		gulp.watch "#{paths.source.root}**/*.php", ["php-files"]
