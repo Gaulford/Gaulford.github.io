@@ -1,0 +1,47 @@
+.wm-header
+    &__menu
+        width: 40px
+        height: 30px
+        position: relative
+        overflow: hidden
+
+        &__line
+            width: 100%
+            height: 3px
+            position: absolute
+            top: 50%
+            left: 0
+            transform: translateY( -50% )
+
+            opacity: 1
+            transition: all 300ms ease-in-out
+            border-radius: 5px
+            background-color: #999999
+
+        &:before,
+        &:after
+            @extend .wm-header__menu__line
+            content: ""
+            transform: translateY( 0 )
+            top: auto
+
+        &:before
+            top: 0
+
+        &:after
+            bottom: 0
+
+        &--close
+            &:before
+                top: 50%
+                left: 50%
+                transform: translate( -50%, -50% ) rotate( 45deg )
+
+            &:after
+                bottom: 50%
+                left: 50%
+                transform: translate( -50%, 50% ) rotate( 315deg )
+
+            .wm-header__menu__line
+                transform: translateX( 50% )
+                opacity: 0

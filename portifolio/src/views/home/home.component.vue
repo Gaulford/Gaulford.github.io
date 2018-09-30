@@ -1,7 +1,8 @@
 <template>
-    <section class="home">
+    <section class="wm-page-home">
+        <HeaderComponent></HeaderComponent>
     </section>
 </template>
 
-<script lang="sass" src="./home.component.sass"></script>
+<style lang="sass" src="./home.component.sass"></style>
 <script lang="ts" src="./home.component.ts"></script>
