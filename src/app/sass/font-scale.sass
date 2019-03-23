@@ -1,0 +1,8 @@
+@mixin fontScale( $minW, $maxW, $minFont, $maxFont )
+    font-size: #{$minFont}px
+
+    @media (min-width: #{$minW}px) and (max-width: #{$maxW}px)
+        font-size: calc(#{$minFont}px + (#{$maxFont} - #{$minFont}) * ( (100vw - #{$minW}px) / ( #{$maxW} - #{$minW})))
+
+    @media (min-width: #{$maxW}px)
+        font-size: #{$maxFont}px

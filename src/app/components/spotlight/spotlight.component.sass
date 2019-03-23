@@ -1,4 +1,6 @@
 @import "~src/app/sass/pallet"
+@import "~src/app/sass/font-scale"
+@import "~src/app/sass/media-queries"
 
 .ptf-header
     background-color: $black
@@ -12,18 +14,59 @@
     justify-content: center
 
     &__container
+        padding-top: 70px
         max-width: 1170px
+        display: flex
+        flex-wrap: wrap
+        justify-content: center
         flex-grow: 1
 
+        @include sm()
+            padding-top: (70px * 2)
+
+        @include md()
+            padding-top: (70px * 3)
+
     &__title
+        width: 100%
+        margin-bottom: 15px
+        @include fontScale( 320, 1920, 50, 140 )
+        font-weight: 700
+        text-transform: lowercase
+        text-align: center
+
         &__hashtag
+            margin-right: 20px
             color: $yellow
 
         &__ido
             color: $gray-1
 
         &__whatido
-            color: $gray-2
+            display: block
+            color: $white
 
     &__subtitle
-        color: $gray-0
+        width: 100%
+        margin-bottom: 70px
+        font-family: "Crimson"
+        @include fontScale( 320, 1920, 14, 18 )
+        font-style: italic
+        text-align: center
+        color: $white
+
+    &__cta
+        padding: 25px 10px
+        border-radius: 50%
+        border: solid 2px $white
+        font-family: "Crimson"
+        font-size: 18px
+        font-style: italic
+        color: $white
+        text-decoration: none
+
+        @include sm()
+            padding: 30px 15px
+
+        @include md()
+            padding: 35px 20px

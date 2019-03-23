@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { SpotlightComponent } from './components/spotlight/spotlight.component';
 import { HomeComponent } from './pages/home/home.component';
 import { MenuComponent } from './components/menu/menu.component';
+import { DrawerComponent } from './components/drawer/drawer.component';
 
 @NgModule({
     declarations: [
         AppComponent,
         SpotlightComponent,
         HomeComponent,
-        MenuComponent
+        MenuComponent,
+        DrawerComponent
     ],
     imports: [
         BrowserModule,

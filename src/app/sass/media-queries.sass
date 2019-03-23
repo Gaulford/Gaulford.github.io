@@ -1,0 +1,19 @@
+@mixin xs()
+    @media all and (max-width: 600px)
+        @content
+
+@mixin sm()
+    @media all and (min-width: 601px)
+        @content
+
+@mixin md()
+    @media all and (min-width: 961px)
+        @content
+
+@mixin lg()
+    @media all and (min-width: 1265px)
+        @content
+
+@mixin xl()
+    @media all and (min-width: 1905px)
+        @content

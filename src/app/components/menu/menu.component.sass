@@ -1,0 +1,76 @@
+@import "~src/app/sass/pallet"
+@import "~src/app/sass/media-queries"
+
+.ptf-nav
+    position: absolute
+    top: 36px
+    left: 0
+    z-index: 1
+    width: 100%
+    display: flex
+    justify-content: center
+
+    @include sm()
+        top: (36px * 2)
+
+    @include md()
+        top: (36px * 3)
+
+
+    &__container
+        display: flex
+        flex-grow: 1
+        justify-content: space-between
+        max-width: 1170px
+
+    &__menu-cta
+        &__icon
+            $icon: &
+            display: block
+
+            &__line
+
+                transition: background-color 250ms ease
+                border-radius: 10px
+                background-color: $gray-2
+                width: 30px
+                height: 5px
+
+                & + &
+                    margin-top: 5px
+
+            &:hover
+                #{$icon}__line
+                    background-color: $white
+
+    &__logo
+        &__link
+            transition: transform 250ms ease
+            transform: scale( 1 )
+            display: block
+            min-width: 93px
+
+            &:hover
+                transform: scale( 1.05 )
+
+    &__lang-switcher
+        &__container
+            display: flex
+            align-items: center
+
+        &__item
+            & + &
+                &:before
+                    content: "|"
+                    margin-left: 5px
+                    font-size: 18px
+
+            &__link
+                transition: color 250ms ease
+                font-size: 18px
+                text-transform: uppercase
+                text-decoration: none
+                color: $gray-2
+
+                &:hover
+                    color: $white
